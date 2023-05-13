@@ -16,7 +16,6 @@ title: CS2113 Software Egineering - Fall 2023
 
 * [Syllabus](/syllabus.html)
 * [Class Schedule](/schedule.html)
-* [Guides](/guides)
 * [Videos](/videos)
 * [Ed](https://edstem.org/us/courses/39551/discussion/) -- for questions
 
