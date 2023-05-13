@@ -20,11 +20,12 @@ aside:
 
 ### Meeting Time and Course Staff
 
-* Lecture: FNGR 208
+* Lecture: PHIL B156
   * Mon. 8AM - 10:30AM 
 * Lab
-  * Wed. 11:00AM - 12:25PM (TOMP 405, section 30)
-  * Wed. 11:00AM - 12:25PM (SEH 4040, section 31)
+  * Mon. 2:10PM - 3:20PM (SEH 4040, section 30)
+  * Wed. 3:35PM - 4:40PM (TOMP 405, section 31)
+  * Wed. 3:35PM - 4:40PM (SEH 4040, section 32)
 
 ## Course Details 
 
@@ -77,9 +78,8 @@ Having completed the pre-reqs, you are expected to submit well-written code:
 ## Grading 
 
 ### Grading Breakdown
-   * 7%: Self-Guided Worksheets 1 - 7
+   * 8%: Self-Guided Worksheets 0 - 7
    * 1%: Lab 0
-   * 1%: Worksheet 0
    * 20%: Labs 1-4 
    * 30%: Projects
    * 40%: Exams (2x 20% each)
@@ -96,7 +96,7 @@ Labs are short-to-medium size programming assignments that are designed to reinf
 
 ### Projects
 
-There are three projects for this class. Each worth 10% of your grade, for a total of 30%. They are a substantial amount of work.
+There are three projects for this class. They are a substantial amount of work.
 
 ### Exams
 
@@ -104,15 +104,26 @@ There are two non-comprehensive exams in this class during the semester, each wo
 
 ### Participation/Attendance
 
-Participation is worth 1% of your grade. You earn participation credit by attending lecture.
+Participation is worth 1% of your grade. You earn participation credit by attending lecture for the full lecture period.
+
+### Re-grade requests and grades on Blackboard
+
+It is your responsibility to make sure that grades have been correctly entered in Blackboard in a timely manner. Please make sure that Blackboard reflects your correct scores within two weeks of an assignment due date; we will not adjust scores after this deadline.
+
+Please be aware that Blackboard does not weight overall course grades correctly. You can calculate your grade in the course at any time by referring to the raw scores on Blackboard, and using the weights above to calculate your grade in the class.
+
+No assignments will be accepted for re-grade requests after final exam grades have been recorded in Blackboard. 
 
 ## Submission/Late Work Policy
 
-We do not accept late work in this course. If you have a reason you need an extension (illness, unplanned emergency, etc.) please email the professor at least 12 hours before the deadline. Extensions will be offered at professor discretion.
+We do not accept late work in this course. If you have a reason you need an extension (illness, unplanned emergency, etc.) please email the professor at least 12 hours before the deadline. Extensions will be offered at professor discretion. Delayed flights, vacations, and being busy with other courses are not accepted as excused absences.
+If you are unable to attend the final due to an unforseen event like an illness, a doctor's note (or documentation for another university-approved excuse and instructor discretion) will be required to qualify for a makeup.
+
+For any extension and/or retake, a doctor's note (or other university-approved excused absence and instructor's discretion) is required to qualify. At-home COVID test results and self-diagnosed illnesses will not be granted extensions and makeups. The doctor's note must specify on which days the student is excused from attending class in order to qualify for an extension. 
 
 ## Class Communication
 
-We will use two primary forms of communication in this class: email announcements and [Ed](https://edstem.org/us/courses/31676/discussion/). You are responsible for remaining up to date on any information sent by email or posted to Ed. This may include clarifications to assignments, updates on grading rubrics, and changes in office hours. 
+We will use two primary forms of communication in this class: email announcements and [Ed](https://edstem.org/us/courses/39551/discussion/). You are responsible for remaining up to date on any information sent by email or posted to Ed. This may include clarifications to assignments, updates on grading rubrics, and changes in office hours. 
 
 For all general course information, questions, and clarifications, you should preference to using Ed. An instructor, TA, or even your fellow classmate can then answer a question. You can even post your questions anonymously. 
 
@@ -122,12 +133,12 @@ Please allow instructional staff 24 business hours (M-F from 8am-4pm) to respond
 
 We also have an [anonymous feedback form](https://forms.gle/fzfc5oCBgDgwiNjn6) available for students in this class.
 
+### Professionalism
+
+Students are expected to treat each other, the TAs, and the instructor professionally both in-person and in online communications and work. If unprofessional behavior is observed, a student will first receive a warning. Afterwards, their final grade in the course may be reduced up to 5% (as a loss of the participation points this semester) for additional acts of unprofessionalism.
+Unprofessionalism covers activities (or lack thereof) on the group project this semester (see below). 
 
 ## Course Policies
-
-### Illness policy
-
-If you are ill and it will cause you to miss class, lab, or an assignment, you should let your course instructor know in advance, if possible. It is your responsibility to catch up with any missed material. For extended absences due to illness, you should provide a doctors note. If you are to miss an exam or project deadline due to illness, you should also provide a doctors note and a plan to make up those assignments. Makeups and extensions are offered at the professor's discretion.
 
 ### Academic Integrity policy
 
