@@ -10,11 +10,8 @@ title: Schedule
 
 
 | Week | Lecture (Mon)                                                                                                            | Lab (Mon and Wed)                                                                                                                    |
-
 | 1    | Aug 28: History of <a href="https://dl.acm.org/doi/pdf/10.1145/1134285.1134288">Software Engineering</a><br>[J0 - OOP, Encapsulation, Unit Testing](j/0)<br>&bull; [J0 Worksheet -- understanding unit tests](worksheet/j0) (Due Sun Jan 29)                                      | Aug 30: [Lab 0 -- git setup](lab/0) (Due Fri Jan 20), lecture on git         |
-
 | 2    |      <i>no class -- labor day</i>           | Sep 6: finish workskeet J0 |
-
 | 3    | Sep 11: [S1 - Software Testing](j/software_testing)<br> [S2 - Software Engineering Development](j/software_engineering)<br>&bull; [J7 Worksheet](worksheet/j7) (Due Sun Apr 23) 
 | 4    | Sep 18: [J1 - Inheritance and UML](j/1) <br>&bull; [J1 Worksheet](worksheet/j1) (Due Sun Feb 5)             | Sep 20: [Lab 1 -- Enigma](lab/1) (Due Tues Feb 7)                                                                                 |                                                                        |
 | 3    | Sep 25: [J2 - Polymorphism](j/2) <br>&bull; [J2 Worksheet](worksheet/j2) (Due Sun Feb 12)    | Sep 27: [Lab 2 -- Dot Chaser](lab/2) (Due Tue Feb 14)                                                                            |
