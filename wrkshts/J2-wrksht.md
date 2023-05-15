@@ -1,512 +1,453 @@
 ---
 layout: worksheet
 permalink: /worksheet/j2
-showsolution: true
+showsolution: false
 ---
 
 # Worksheet: J2
 
 Worksheets are self-guided activities that reinforce lectures. They are not graded for accuracy, only for completion. Worksheets are due by Sunday night before the next lecture.
 
-Submit a file called `worksheet-J2.md` in your repo for this assignment.
+Create a new repo using all the steps in Lab 0 called `yourgitusername-worksheet-J1`. Then, add the following file to it:
+
+You may submit a single file in any format; Java (with comments), text, and/or markdown (an `.md` file). It can be called anything (reasonable).
 
 ## Note
 
-Attempt to answer these questions before running the code. This will improve your ability to analyze and reason about code without an IDE or compiler. This skill we be helpful on the exams.
+Attempt to answer these questions before running the code. This will improve your ability to analyize and reason about code without an IDE or compiler. This skill we be helpful on the exams.
 
 ## Questions
 
-
-### q
-Define **polymorphism** in the context of Java and provide one example where it is valuable? 
-
-#### s
-
-**Polymorphism** in Java allows multiple implementation of the same interface. One example will be the `Point` and `LabPoint` classes we implementated in class where we can have a `toString()` method in both `Point` and `LabPoint` that prints out different information.
-
-
 ### q
 
-Consider the following program from the class notes
+Which of the following is an object and which is a basic type?
 
 ```java
-public class Ex3 {
-  public static void main(String[] args) {
-    Random   rand = new Random(System.currentTimeMillis());
-    Point    v    = new Point(3, 4);
-    LabPoint w    = new LabPoint(5, 2, "A");
-    String   x    = "I'm a string";
-    Scanner  y    = new Scanner(System.in);
 
-    Object u;
-    int i = rand.nextInt(4);
-
-    if( i == 0 )
-      u = v;
-    else if( i == 1 )
-      u = w;
-    else if( i == 2 )
-      u = x;
-    else
-      u = y;
-    System.out.println(u); //<--
-  }
-}
-```
-
-Explain how polymorphism makes this program possible. 
-
-#### s
-Since every class that does not have the `extends` keyword implicitly extends the `Object` class, the `Object u` declaration makes `u` capable of "morphing" into any of the 4 variables `v, w, x, y`.
-
-### q
-What is the output of this program? You should be able to do this without running the program!
-
-```java
-class A {
-    public String toString(){
-        return "A";
-    }
-}
-
-class B extends A{
-    public String toString() {
-        return "B";
-    }
-}
-
-class C extends A {
-    public String toString() {
-        return super.toString();
-    }
-}
-
-class D extends C {
-    public String toString() {
-        return super.toString();
-    }
-}
-
-public class tmp {
-    public static void main(final String args[]) {
-        D d = new D();
-        System.out.println(d.toString());
-    }
-}
+int a;
+double b;
+int c[] = {1, 2, 3};
+String s = "Hello World";
 ```
 
 #### s
-The output is `A` because `class D` extends `class C` and `class C` extends `class A` where both classes `C, D` have their `toString()` function return `super.toString()` and the `toString()` method of `class A` returns a single character `A`.
+* In the first two lines, `int` and `double` are basic types.
+* In the last two lines, array and `String` are objects.
 
 ### q
-What is the output of this program? You should be able to do this without running the program!
 
-```java
-class A {
-    public String toString() {
-        return "A";
-    }
-    
-    public String fancyToString() {
-        return "~~A~~";
-    }
-}
-
-class B extends A {
-    public String toString() {
-        A letterA = this;
-        return letterA.fancyToString();
-    }
-    public String fancyToString() {
-        return "~~B~~";
-    }
-}
-
-public class LetterPrinter {
-    public static void main(final String args[]) {
-        B letterB = new B();
-        System.out.print(letterB.toString() + " ");
-        
-        A letterA = letterB;
-        System.out.println(letterA.toString());
-    }
-}
-```
-
-#### s
-* The output of the program is `~~B~~ ~~B~~`.
-* With polymorphism, `letterB.toString()` will make `letterA` of `A letterA = this;` in `class B` to `class B`, which results in `letterA.fancyToString();` return `~~B~~`. Similarly, in the main function, when `A letterA = letterB`, it is morphed into `class B` rather than `class A`, resulting in `letterA.toString()` give the same output as the first print statement `~~B~~`.
-
-### q
-What is the output of this program? You should be able to do this without running the program!
-
-```java
-class A {
-    public String toString() {
-        return "A";
-    }
-    
-    public String fancyToString() {
-        return "~~A~~";
-    }
-}
-
-class B extends A {
-    public String fancyToString(){
-        return "~~B~~";
-    }
-}
-
-public class LetterPrinter {
-    public static void main(final String args[]) {
-        B letterB = new B();
-        System.out.print(letterB.toString() + " ");
-        
-        A letterA = letterB;
-        System.out.println(letterA.toString());
-    }
-}
-```
-
-#### s
-* The output of this program is `A A`.
-* Note that `class B` does not have a `toString()` method, which means calling `letterB.toString()` will result in the `toString()` method of `class A` since `class B extends A`. Similarly, although `A letterA = letterB` morphed `letterA` to `class B`, it still uses the `toString()` method of `class A`.
-
-### q
-Consider the first two class declarations. What is the output of compiling the program below? 
-```java
-abstract class Letter {
-    protected boolean uppercase;
-
-    abstract String get_name();
-
-    abstract int get_alphabet_position();
-}
-```
-```java
-class A extends Letter {
-    public String toString() {
-        return "A";
-    }
-
-    protected int get_alphabet_position() {
-        return 1;
-    }
-
-    private String get_name() {
-        return "A";
-    }
-}
-```
-
+Write a Java class `Q2` that asks the user to enter the size of an array, then fills it with
+multiples of two. Finally, it generates a string representation of the array, i.e. `{2, 4, 6, 8, ...}`
 
 
 #### s
-The program does not compile because the `get_name()` in `class A` attempts to override the abstract method `get_name()` in abstract class `Letter` with reduced visibility `private`.
-
-### q
-If we change the implementation of `A` to the following, what does the code below output?
 ```java
-abstract class Letter {
-    protected boolean uppercase;
+import java.util.Scanner;
 
-    abstract String get_name();
-
-    abstract int get_alphabet_position();
-}
-```
-```java
-class A extends Letter {
-    public String toString() {
-        return "A";
-    }
-
-    public int get_alphabet_position() {
-        return 1;
-    }
-
-    protected String get_name() {
-        return "A";
-    }
-}
-```
-
-```java
-public class Main {
-    public static void main(final String args[]) {
-        A a = new A();
-        System.out.println("A: " + a.get_alphabet_position());
-    }
-}
-
-```
-
-#### s
-The output of the program is `A: 1`.
-
-### q
-What is the output of this program? You should do this without running the program.
-
-```java
-class A {
-    public String toString() {
-        return "A";
-    }
-}
-
-class B extends A {
-    public String toString() {
-        return "B";
-    }
-}
-
-public class PolymorphicOverload {
-    public void foo(B letterB1, B letterB2) {
-        // 2
-        System.out.println("foo2: " + letterB1 + " " + letterB2);
-    }
-
-    public void foo(A letterA1, A letterA2) {
-        // 1
-        System.out.println("foo1: " + letterA1 + " " + letterA2);
-    }
+public class Q2 {
     public static void main(String args[]) {
-        PolymorphicOverload f = new PolymorphicOverload();
-        B letterB = new B();
-        A letterA = (A) new B();
-        f.foo(letterB, letterA);
+        int c;
+        System.out.println("Enter an array length greater than 0 and less than or equal to 15:");
+        
+        Scanner sc = new Scanner(System.in);
+        c = sc.nextInt();
+        sc.close();
+
+        if(c < 0 || c > 15) {
+            System.err.printf("ERROR: Invalid length %d\n",c);
+            System.exit(1);
+        }
+
+        double a[] = new double[c];
+
+        for(int i = 0; i < c; i++) {
+            if(i > 0) {
+                a[i] = (a[i - 1] + 2) *3.15;
+            }else {
+                a[i] = 10.8;
+            }
+        }
+
+        String str = "{ ";
+
+        for(int i = 0; i < c; i++){
+            str += "" + ((int)a[i]) + " ";
+        }
+        str += "}";
+
+        System.out.println(str);
+    }
+}
+```
+
+### q
+
+Two part question:
+
+(A) What is a static method in Java?
+
+(B) Why does the main method need to be a static method?
+
+```java
+public class Hello {
+    public static void main(String[] args) {
+        System.out.println("hello, world");
     }
 }
 ```
 
 #### s
-* The output of the program is `foo1: B B`.
-* While `letterB` and `letterA` are both `class B`, the declaration makes `f.foo(letterB, letterA)` look for the best method to fit `f.foo(class B, class A)` due to the static declaration of `letterA` being `class A`. This means the method `public void foo(A letterA1, A letterA2)` is called in the main function because it is the best fitting method where both parameters passed in can be `class A` (remember `B` extends `A`). Therefore, the output is `foo1: B B`.
-
+* Static methods are called directly, or statically, without the need of an object instance.
+* `main` methods need to be static because it needs to be called without instantiating an object of the class.
 
 ### q
-Assume that `class A` is implemented in such a way so that the program will compile and run. What is the output? You should do this problem without running the code.
+
+What is the output of the following main method?
 
 ```java
-public class Temp {
-    public static void foo(A a) {
-        System.out.println("foo1: " + a.get_name());
+public static void main(String args[]) {
+    String str = "Java is my favorite language";
+    str += '!';
+    System.out.println(str + " and python is my second");
+}
+```
+
+#### s
+The output is `Java is my favorite language! and python is my second`.
+
+### q
+
+What is the output of the following programs?
+
+```java
+/* Program 1 */
+public static void main(final String args[]) {
+    String choice = new String("A");
+    if (choice == "A") {
+        System.out.println("Correct");
     }
-    public static void foo(Letter a) {
-        System.out.println("foo2: " + a.get_name());
+    else {
+        System.out.println("Wrong");
     }
-    public static void main(final String args[]) {
-        Letter a = (Letter) new A();
-        foo(a);
+}
+```
+
+```java
+/* Program 2 */
+public static void main(final String args[]) {
+    String choice = new String("A");
+    if (choice.equals("A")) {
+        System.out.println("Correct");
+    }
+    else {
+        System.out.println("Wrong");
     }
 }
 ```
 
 #### s
-The output of this program is `foo2: A`. The variable `a` is declared as `Letter class` which will make `foo(a)` run the second method with declaration `public static void foo(Letter a)`.
-
+* Program 1's output is `Wrong` and Program 2's output is `Correct`.
+* Similar to the case in C, `String` is an object type where `String choice` will make `choice` have the address of the string on the heap. Thus, in Program 1, the if statement is comparing a memory address to a string; while in Program 2, the `.equals()` method will compare the content `choice` is pointing at to the string `"A"`.
 
 ### q
-Suppose you had the following class structures
 
+Does the below program change the season? Why, or why not?
 
 ```java
-public class Species {
-    String genus;
-    String species;
-    public Species(String g, String s) {
-        genus = g;
-        species = s;
-    }
-    
-    public Species(Species s) {
-        genus = s.genus;
-        species = s.species;
-    }
-    
-    public String toString() {
-        return genus + " " + species;
-    }
+static void change_season(String str) {
+    str = "Spring";
 }
 
-public class Breed extends Species {
-    protected String breed;
-
-    public Breed(String b, String g, String s) {
-        super(g, s);
-        breed = b;
-    }
-
-    public Breed(String b, Species s) {
-        super(s);
-        breed = b;
-    }
-
-    public String toString() {
-        return super.toString() + "(" + breed + ")";
-    }
-}
-
-public class Pet {
-    String name;
-    Species species;
-
-    public Pet(String n, Species s) {
-       name = n;
-       species = s;
-    }
-
-    public String toString() {
-        String ret = "Name: " + name + "\n";
-        ret += "Species: " + species;
-        retunr ret;
-    }       
+public static void main(final String args[]) {
+    String season = "Winter";
+    change_season(season);
+    System.out.println("The current season is: " + season);
 }
 ```
 
+#### s
+The program does not change the season, because the original season variable, which is a pointer to
+`Winter` is reassigned to a new string, `Spring`, inside the method. That breaks the link with the original season in `main`.
 
-What is the output of the following snippet of code? If there is an ERROR, describe the error. **You should not need to run the code to determine the output**.
+### q
+
+What is the output of the main method below? Please explain.
 
 ```java
-    
-   Species dog = new Species("Canis","Familaris");
-   Breed shorthair = new Breed("shorthair", new Species("Felis","Catus"));
-   Pet fluffy = new Pet("fluffy", new Breed("pomeranian", dog));
-   Pet george = new Pet("george", dog);
-   Pet brutus = new Pet("brutus", (Species) shorthair);
+public class Point {
+    double x = 0;
+    double y = 0;
+
+    public Point(double x, double y) {
+        x = x;
+        y = y;
+    }
+}
+```
+
+```java
+public static void main(final String args[]) {
+    Point point = new Point(1, 2);
+    System.out.println("X: " + point.x + " Y: " + point.y);
+}
+```
+
+#### s
+The output of the main method is `X: 0.0 Y: 0.0`. The reason is in the `Point` class, the constructor does not pass the parameters `x` and `y` onto `x` and `y` of the `Point` class.
+
+### q
+
+What principle of OOP does the `private` declaration for variable and functions achieve? Explain.
+
+#### s
+The priciple of Encapsulation is achieved by `private` declaration of variable and functions. The reason is `private` variable and functions cannot be accessed by other objects.
+
+### q
+
+In the Point class below, how does Java choose between the two constructors.
+
+```java
+public class Point {
+
+   private double x, y; 
    
-   System.out.println(fluffy);
-   System.out.println(george);
-   System.out.println(brutus);
-```
+   public Point(double x, double y) {
+        this.x = x;
+        this.y = y;
+   }
 
+   public Point(Point other) {
+       this.x = other.getX();
+       this.y = other.getY();
+   }
+
+}
+```
 
 #### s
-```
-Name: fluffy
-Species: Canis Familaris(pomeranian)
-Name: george
-Species: Canis Familaris
-Name: brutus
-Species: Felis Catus(shorthair)
-```
-
+Java chooses between the two constructors by checking the type of the argument passed in. When a new `Point` is called with two `double`s, it will use the constructor `public Point(double x, double y)`; in contrast, when a new `Point` is called with a `Point` passed in, it will use the constructor `public Point(Point other)`.
 
 ### q
 
-Consider the following classes
+For the below questions, when the class `Point` is referenced, we are talking about the below class, which you can assume is fully implemented and working as described:
 
 ```java
-public class A {
-    public int foo() {
-        return 42;
-    }
-
-    public int bar() {
-        return foo() + 8;
-    }
-}
-
-public class B extends C {
-    public int foo() {
-        return 41;
-    }
-
-    public char baz() {
-        return "y";
-    }
-}
-
-public class C extends A {
-    public char baz() {
-        return "x";
-    }
-}
-
-public class D extends A {
-    public int bar() {
-        return 7;
-    }
-}
-
-public class E extends C {
-    public int bar() {
-        return foo() + 20;
-    }
+public class Point {
+   private double x,y; //the x,y fields
+   public Point(double x,double y); //construct a point from an x,y
+   public Point(Point other); //construct a point from another point
+   public double getX(); //return the x component
+   public double getY(); //return the y component
+   public double setXY(double x, double y); //sets the x and y fields
+   public String toString(); //return the string representation
+   private double sum_x_y(); // Returns the sum of X and Y
 }
 
 ```
 
-Draw the class hierarchy for the above classes, that is the UML diagram that simply shows who inherits from whom.
+
+Say we want to make a class that extends `Point` with a method that can reflect a point across the X and Y axis:
+
+```java
+public class CustomPoint extends Point {
+    public void reflect(); // Reflects point
+}
+```
+
+Which of the following implementations achieves this?
+
+```java
+    // Option 1
+    public void reflect() {
+        x = -x;
+        y = -y;
+    }
+
+    // Option 2
+    public void reflect() {
+        this.x = -this.x;
+        this.y = -this.y;
+    }
+
+    // Option 3
+    public void reflect() {
+        this = Point(-x,-y);
+    }
+    
+    // Option 4
+    public void reflect() {
+        double x = -this.getX();
+        double y =-this.getY();
+        this.setXY(x,y);
+    }
+    
+    // Option 5
+    public void reflect() {
+        x = -this.getX();
+        y = -this.getY();
+    }
+```
+
+Explain why. 
 
 #### s
-
-TODO
+Option 4 achieves the goal of reflecting the point. None of the other options compiles because `x` and `y` in `CustomPoint` is inheritted from `Point` and cannot be read/written to directly in `CustomPoint` since they are declared private in `Point`.
 
 ### q
 
-Continuing with the classes from the previous question, consider a mystery function that returns a object of the given class.  **You do not know the definition of the mystery function, other than it compiles properly and returns an object of the class.** For each of the following method calls marked below, indicate the value of the output, if the output cannot be determined, or if there is an error.
+If we add this constructor to `CustomPoint`:
+
+```java
+    public CustomPoint() {
+        setXY(10, 10); // Line 1
+        super(0, 0); // Line 2
+    }
+```
+
+...and then run this program,  what is the output?
+
+```java
+    public static void main(final String args[]) {
+        CustomPoint p = new CustomPoint();
+        System.out.println(p.toString());
+    }
+```
+
+#### s
+The program does not compile because the constructor call on `Line 2` must be called before anything else inside the constructor for `CustomPoint`.
+
+
+### q
+
+What if we switch line 1 and 2 in the previous question?
+
+#### s
+Now the program compiles and the output is `(10.0, 10.0)`.
+
+### q
+
+If we want to re-implement `sum_x_y` in our custom point, but first reflect the point before returning the sum, which of the following implementations are valid? (Note: assume that `reflect` has a valid implementation)
+
+```java
+    //Option 1
+    public double sum_x_y() {
+        this.reflect()
+        return super.sum_x_y();
+    }
+
+    //Option 2
+    public double sum_x_y() {
+        this.reflect();
+        return this.getX() + this.getY();
+    }
+
+    //Option 3
+    public double custom_sum_x_y() {
+        this.reflect()
+        return super.sum_x_y();
+    }
+
+    //Option 4
+    public double custom_sum_x_y() {
+        this.reflect();
+        return this.getX() + this.getY();
+    }
+
+```
+
+Explain your answer.
+
+#### s
+Option 2 is valid. Option 1 and 3 does not compile because `sum_x_y()` is a private method that cannot be accessed by `CustomPoint` class. Option 4 has the correct implementation of the method but does not override `sum_x_y` as it has a different function name.
+
+
+### q
+
+Consider the following class
 
 ```java
 
-A a = mysteryA(); //<-- mystery function, this line compiles (the below may not!)
-System.out.println(a.foo()); //<-- Mark A.1
-System.out.println(a.bar()); //<-- Mark A.2
-System.out.println(a.baz()); //<-- Mark A.3
+public class Racecar {
 
+    private int number; 
+    private Driver driver; //assume implemented properly
+    protected String sponsor = null;
+    public Racecar(int n, Driver d) {
+        number = n;
+        driver = d;
+    }
 
-B b = mysteryB(); //<-- mystery function, this line compiles (the below may not!)
-System.out.println(b.foo()); //<-- Mark B.1
-System.out.println(b.bar()); //<-- Mark B.2
-System.out.println(b.baz()); //<-- Mark B.3
+    public String toString() {
+        return "Car #" + number + " Driver: " + driver;
+    }
+    
+    protected addSponsor(String sp) {
+        sponsor = sp;
+    }
+}
+```
 
-D d = mysteryD(); //<-- mystery function, this line compiles (the below may not!)
-System.out.println(d.foo()); //<-- Mark D.1
-System.out.println(d.bar()); //<-- Mark D.2
-System.out.println(d.baz()); //<-- Mark D.3
+Suppose we want to extend this to a `FormulaOne` class which has a make, e.g., Mercedes, complete the constructor and `toString()` method that would make this functional?
+
+```java
+
+public class FormulaOne extends Racecar {
+    private String make;
+
+    //TODO
+}
 ```
 
 #### s
+```java
+
+public class FormulaOne extends Racecar {
+
+    private String make;
+    public FormulaOne( int n, Driver name, String car_make) {
+        super(n, name);
+        make = car_make;
+
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +" Make: " + this.make;
+    }
+    
+}
 
 ```
-A.1 : Compiles, Output not deterministic
-A.2 : Compiles, Output not deterministic
-A.3 : Doesn't Compile, No output
 
-B.1 : Compiles, Output is 41
-B.2 : Compiles, Output is 49
-B.3 : Compiles, Output is y
+### q 
 
-D.1 : Compiles, Output is 42
-D.2 : Compiles, Output is 7
-D.3 : Doesn't Compile, No output
+Using the `Racecar` and `FormulaOne` classes above, if we had a main method
+
+```java
+
+public static void main(String args[]) {
+
+
+   Racecar r = new Racecar(/* ... some args .. */);
+   r.addSponsor("Home Depot"); //<--A
+
+   FormulaOne f1 = new FormulaOne(/* ... some args .. */);
+   f1.addSponsor("Home Depot"); //<--B
+     
+}
 ```
+
+Does the code work at mark `A` or mark `B` or neither? Explain.
+
+#### s
+The code works at both marks. Each mark is adding a sponsor to two different objects, so there is not a conflict of overwriting the other. Since `F1` inherits from `Racecar`, it also has access to the `addSponsor` function even though it was not explicitly defined in the F1 class.
+
 
 ### q
 
-What is the difference between a `class` and an `abstract class`?
+Consider the UML diagram from the notes. Expand this to include an **intern**. An **intern** is like an employee, has a manager, unit, but has an expiration on their employment. How does this fit into the UML diagram?
 
-#### s
+Additionally, come up with one additional type for this company, describe it and add it to the UML diagram.
 
-An `abstract class` can only be inherited by another class and can not be directly instantiated. A `class` can be instantiated in most contexts, and still inherited by other classes as well. `abstract class`es must also be implemented before code will compile.
+Include your UML diagram and explanation with this worksheet (in the file you're submitting, or as a screenshot/photo/etc).
 
-
-### q
-
-If you were to create an abstract class for a `Car` -- what features could be defined in the implemented class vs. what could be defined in the abstract class? Provide justifications for your design.
-
-#### s
-
-Features such as car brand, model, year, and other attributes that would be highly variable would be defined in the class implmentation. Other functions that would be mostly fixed and more deterministic across different class definitions, such as `toString` and functions that get or set values would be defined in the `abstact` class.
-
-# Grading rubric and submission
-
-Use git, as discussed in Lab 0, to submit your work in a repo called `gitusername-worksheetJ2`. You will be graded on the following:
-
-|Item | Points |
-|the name of the repo for this lab matches the pattern  `gitusername-worksheetJ2` | 10 |
-|the grader has been added as a collaborator to the repo with an invite timestamp during the lecture| 10 |
-|the repo has been made private | 10 |
-|the name of the answers file in your repo is  `worksheet-J2.md` | 10 |
-|worksheet questions have been completed | 60 |
-|TOTAL | 100 |

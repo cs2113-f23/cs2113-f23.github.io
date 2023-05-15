@@ -1,13 +1,14 @@
 ---
 layout: worksheet
 permalink: /worksheet/j4
-showsolution: true
+showsolution: false
 ---
 
 # Worksheet: J4
 
 Worksheets are self-guided activities that reinforce lectures. They are not graded for accuracy, only for completion. Worksheets are due by Sunday night before the next lecture.
 
+Submit a file called `worksheet-J3.md` in your repo for this assignment.
 
 ## Note
 
@@ -16,442 +17,664 @@ Attempt to answer these questions before running the code. This will improve you
 ## Questions
 
 ### q
-How does object-oriented programming pair so closely with GUIs?
-#### s
-GUIs have a lot of components that have similar interfaces and jobs, but may have slightly different functionality. For example we might have an exit button, and another such as a submit button, which you can only click when certain things are done. Both of these are buttons, are displayed the same, but have different functionality. We see then that if both of these buttons inherit from a parent Button class, then we won't have much extra code to write beyond what they do when they're clicked. So we see that any part of a GUI is going to be an object, and that we will end up using a lot of inheritance, which is why OOP is so closely tied to GUIs.
 
-### q
+Consider the class declaration below:
 
-What is the relationship between `WindowListener` and `WindowAdapter`?
-
-#### s
-`WindowListener` is an interface with methods that correspond to any event that might happen to a window, such as opening, closing, or minimizing it. `WindowAdapter` on the other hand is an abstract class that implements `WindowListener, WindowStateListener, WindowFocusListener`. The main difference we see then is that `WindowAdapter` is essentially a combination of all possible ways to interact(interface :) )  with a window, and so we know that if we have something that is a window, we can inherit from this parent class, indicating it's a window, instead of simply implementing all the interfaces separately. High level the reasoning behind this is as follows: we have many ways to interface with a window, but these overlap with other non-window objects(such as menus), so not everything that implements a subset of these interfaces is a window, but if you implement them ALL the object is a window. So we put all these interfaces in an abstract class so we can say something IS a window, by inheriting it, but we don't only put them in an abstract class as some non-window objects may have similar interfaces.
-
-A side philosophy side tangent: a lot of times we can learn more about something based on how it interacts with things, then its actual definition. This is a common thing in most sciences, usually we don't care about what something is, only how it interacts with other things, to the point a lot of definitions are actually based on how things interact with other things, not just what they are. We see here this is a great example, we're defining what a window is by how it can be interacted with, not what it "is".
-
-
-### q
-
-Go to the Java docs for [`WindowAdapter`](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/event/WindowAdapter.html)
-
-What other kinds of listening does it do other than just those in `WindowListener`?
-
-
-#### s
-`WindowStateListener`: called whenever a window changes state, such as from minimized to active, or active to closed.
-
-`WindowFocusListener`: Called when a window is focused, or not focused.
-
-
-### q
-Assume we define a class as below:
 ```java
-class ParentJFrame extends JFrame {
-    private JFrame[] frames = new JFrame[5];
-
-    public ParentJFrame() {
-        for (int i = 0; i < 5; i++) {
-            JFrame f = new JFrame();
-            f.setTitle("Worksheet Child" + i);
-            f.setSize(300, 300);
-            // Make windows appear on a diagonal line
-            f.setLocation(100 * i, 100 * i);
-            f.addWindowListener(new ChildAdapter());
-            f.setVisible(true);
-            frames[i] = f;
-        }
-        this.addWindowListener(new ParentAdapter());
-    }
-
-    private static class ChildAdapter extends WindowAdapter {
-        // Called when window closes
-        @Override
-        public void windowClosing(WindowEvent e) {
-            System.out.println("Closed!");
-        }
-
-    }
-    
-    private static class ParentAdapter extends WindowAdapter {
-
-        @Override
-        public void windowClosing(WindowEvent e) {
-            System.out.println("Parent Closed!");
-        }
-
-    }
-
+// Is this possible?
+public class Lion extends Mammal, Carnivore {
+    // ...
 }
 ```
-What would be the output of the code below if we close the `ParentJFrame` immediately after it appears?
+
+* Explain why the following class declaration is not possible in Java. 
+* What are the limitations of the  `extends` key word?
+* How can you accomplish this inheritance structure task in Java?
+
+#### s
+
+Java classes can only extend from one class! So we can have `Lion extends Mammal` or `Lion extends Carnivore`, but not both. To accomplish functionality similar to this, we would have:
+
 ```java
-public static void main(final String args[]) {
-        ParentJFrame frame = new ParentJFrame();
-        frame.setTitle("Quiz Parent");
-        frame.setSize(100, 100);
-        frame.setLocation(100, 100);
-        frame.setVisible(true);
+public class Lion extends Mammal implements Carnivore {
+    // ...
+}
+```
+As it makes sense for an animal to inherit from the specific class it is (Mammalia), and for it to have an interface that represents how it interacts (or interfaces) with food.
+
+### q
+
+What are some of the functional differences between an `abstract class` and an `interface`? Use the example below to answer this question.
+
+```java
+public abstract class Employee {
+    // ...
+}
+
+// vs.
+
+public interface Employee {
+    //...
+}
+```
+
+
+
+#### s
+Abstract classes and interfaces can:
+
+* Provide _just_ method declarations that a class must realize
+
+Abstract classes do (and interfaces do not):
+
+* Provide methods and constructors a child class can choose to use, or override
+* Provide inherited class variables
+* Have access modifiers for inherited methods
+* Require the child class to inherit only itself, and no other class
+
+
+### q
+
+Consider the interfaces for a `Stack` and `Queue` of `int`s. 
+```java
+public interface Stack {
+   public void push(int v);
+   public int pop();
+   public int peek();
+}
+
+public interface Queue {
+   public void enqueue(int v);
+   public int dequeue();
+   public int peek();
+}
+```
+
+
+Now suppose you had a `LinkedList` implementation to store `int`s with the following methods defined. 
+
+```java
+public class LinkedList implements Stack, Queue {
+  public LinkedList() {/*...*/}
+  public void addToFront(int v) {/*...*/}
+  public int rmFromFront() {/*...*/}
+  public void addToBack(int v) {/*...*/}
+  public void rmFromBack() {/*...*/}
+  
+  //FINISH HERE
+  
+}
+```
+
+Using those methods in `LinkedList` complete the realization of a `Stack` and `Queue`:
+
+#### s
+
+
+```java
+
+public void push(int v) { 
+    addToFront(v);
+}
+public int pop() { 
+    rmFromFront(v);
+}
+public void enqueue(int v) {
+    addToBack(v);
+}
+public int dequeue() {
+    rmFromFront(v);
+}
+public int peek() {
+    int v = rmFromFront(v); 
+    addToFront(v); 
+    return v;
+}
+```
+
+
+### q
+
+Rewrite the `Stack` and `Queue` interfaces from above to be generic, as well as the `LinkedList`. Explain how this is now generic to manage collections of any class. 
+
+#### s
+
+```java
+public interface Stack<T> {
+   public void push(T v);
+   public T pop();
+   public T peek();
+}
+
+public interface Queue<T> {
+   public void enqueue(T v);
+   public T dequeue();
+   public T peek();
+}
+
+public class LinkedList<T> implements Stack<T>, Queue<T> {
+
+  public LinkedList() {/*...*/}
+  public void addToFront(T v) {/*...*/}
+  public T rmFromFront() {/*...*/}
+  public void addToBack(T v) {/*...*/}
+  public void rmFromBack() {/*...*/}
+
+  public void push(T v) { 
+    addToFront(v);
+  }
+  public T pop() { 
+    rmFromFront(v);
+  }
+  public void enqueue(T v) {
+    addToBack(v);
+  }
+  public T dequeue() {
+    rmFromFront(v);
+  }
+  public T peek() {
+    T v = rmFromFront(v); 
+    addToFront(v); 
+    return v;
+  }
+}
+```
+
+### q
+
+Suppose you have interfaces `Adder` and `Multiplier`:
+
+```java
+public interface Adder<T> {
+    T add(T a, T b);
+}
+```
+
+```java
+public interface Multiplier<T> {
+    T multiply(T a, T b);
+}
+```
+
+Finish the implementation of the `IntegerCalculator` and `FloatCalculator` classes below. 
+
+```java
+public class IntegerCalculator implements Adder<Integer>, Multiplier<Integer> {
+    private String calculatorName;
+
+    public IntegerCalculator(String calculatorName) {
+        this.calculatorName = calculatorName;
+    }
+
+    public String getCalculatorName() {
+        return calculatorName;
+    }
+
+    // TODO: add the methods needed to implement the adder and multiplier interfaces.
+}
+```
+
+```java
+public class FloatCalculator implements  Adder<Float>, Multiplier<Float> {
+    private String calculatorName;
+
+    public FloatCalculator(String calculatorName) {
+        this.calculatorName = calculatorName;
+    }
+
+    public String getCalculatorName() {
+        return calculatorName;
+    }
+
+    // TODO: add the methods needed to implement the adder and multiplier interfaces.
+}
+```
+
+#### s
+
+```java
+public class IntegerCalculator implements Adder<Integer>, Multiplier<Integer> {
+    // ...
+	public Integer add(Integer a, Integer b) {
+		return a + b;
+	}
+
+	public Integer multiply(Integer a, Integer b) {
+		return a * b;
+	}
+}
+```
+
+```java
+public class FloatCalculator implements  Adder<Float>, Multiplier<Float> {
+    // ...
+	public Float add(Float a, Float b) {
+		return a + b;
+	}
+
+	public Float multiply(Float a, Float b) {
+		return a * b;
+	}
+}
+```
+
+### q
+
+Review the following Java util data structures:
+
+* [`ArrayList`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html) 
+* [`Hashtable`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Hashtable.html)
+* [`TreeMap`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/TreeMap.html)
+
+For each, 
+* Provide a two-to-three sentence description of each class
+* For each interface realized by these classes, also provide a two-to-three sentence description. 
+* Finally draw a UML diagram that connects all of these classes back to object
+
+#### s
+
+`ArrayList`
+
+* `ArrayList` is an array of some type, that implements the `List` interface, meaning it has methods so the user of `ArrayList` has precise control over where in the list each element is inserted. The user can access elements by their integer index (position in the list), and search for elements in the list. When the array reaches its total capacity, it is resized.
+* `AbstractList`
+* See first answer for an explanation of the `List` interface. `Cloneable`, means that there is some `clone` method that will return a complete copy in memory of the implementing class, and `Serializable`, provides a method that guarantees the class can be "serialized", or turned into some ascii representation.
+
+
+`HashTable`
+* `Hashtable` maps objects of one type to another, by calling `hashCode` on the key object, in order to find the value. This means that any type used for the key must implement that method. Similar to the hashmap in the boggle project, the Hashtable class has an array of buckets, and when getting a value, the key hash maps to one of these buckets, which is then searched.
+* `Map`, `Cloneable`, `Serializable`
+* No other class extends `Dictionary`, but many classes implement map, such as `TreeMap` and `AbstractMap`.
+* `Map` Provides methods so a user can pass some sort of key, and a value is returned. It also guarantees there is some list of keys, values, and key-value mappings available. Finally, it provides users the ability to check if the mapping is empty, if it contains a key or value, and a way to delete or update key-value pairs. See previous for `Cloneable` and `Serializable`
+
+`TreeMap`
+
+* Another map, except that instead of implementing it using a hash table, it is implemented using a Red-Black tree (see [here](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree)) for a refresher). What happens, is we search for a node that represents our key-value pair.
+* `AbstractMap`, which is an abstract class implementing `Map` but with only some basic methods implemented
+* `NavigableMap`, `Cloneable`, `Serializable`
+* `NavigableMap` is similar to the `Map` interface, except it also requires that all keys and values can be sorted. The additional methods required are ways for the user to get either the max/min keys and values, or the key/value that is immediately greater/lesser than a given key or value. We see that since a Red-Black tree is a sorted binary tree, that means the data stored in it must be sorted, and so we implement `NavigableMap`.
+
+
+### q
+
+Take a look at the documentation for `LinkedHashSet`: [https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/LinkedHashSet.html](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/LinkedHashSet.html)
+and `HashSet`:
+[https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashSet.html](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashSet.html)
+
+When would it be preferable to use a `LinkedHashSet` instead of a `HashSet`?
+
+
+#### s
+We would use the `LinkedHashSet` when we have a set of items that we want to keep in a specific unchanging order. For example, if we want a set of colors, we'd use `HashSet`, since there can only be at most one instance of a color (it wouldn't make sense to store two identical reds), but there isn't an order to colors (the rainbow is only one way to order them, but it's not THE way to). If we wanted a set of integers, we'd want to use `LinkedHashSet`, since integers are inherently comparable and sortable, and we don't want them to be in a random order.
+
+### q
+
+The code below does not use Java generics. Update it to do so. Notably, there should not need casting, but no, the solution isn't just removing the `(String)` casting before the `.get` method. 
+
+```java
+import java.util.HashMap;
+
+public class TestHashMap {
+
+    public static void main (String[] argv) {
+        // Create a new hashmap.
+        Hashtable fabFour = new HashMap();
+
+        // Insert four key and value pairs.
+        fabFour.put("John", "John Lennon");
+        fabFour.put("Paul", "Paul McCartney");
+        fabFour.put("George", "George Harrison");
+        fabFour.put("Ringo", "Ringo Star");
+
+        // Use a key to retrieve a value.
+        String fullName = (String) fabFour.get("Ringo");
+
+        // Prints "Ringo Star"
+        System.out.println(fullName);
+    }
+}
+```
+
+#### s
+
+```java
+public class TestHashMap {
+
+    public static void main(String[] argv) {
+        // Create a new hashmap.
+        HashMap<String,String> fabFour = new HashMap<String,String>();
+
+        // Insert four key and value pairs.
+        fabFour.put("John", "John Lennon");
+        fabFour.put("Paul", "Paul McCartney");
+        fabFour.put("George", "George Harrison");
+        fabFour.put("Ringo", "Ringo Star");
+
+        // Use a key to retrieve a value.
+        String fullName = fabFour.get("Ringo");
+
+        // Prints "Ringo Star"
+        System.out.println(fullName);
+    }
+}
+```
+
+### q
+
+Provide a 1-to-2 paragraph explanation for why we need Generics. You can use the sample code (above and below) to over this explanation.
+
+#### s
+
+A lot of what we do as computer scientists, is writing and using abstractions of
+different things. Methods and functions provide ways for us to perform some
+operation on some data of a specific type, such as integers, over and over
+again, such as adding two numbers. Data structures such as classes provide ways
+for us to give data some shape and functionality, if it can't just be
+represented by a number (as most things can't). What if we want to operate on
+some data, but we don't care about the specific type of the data, such as
+putting it in a list. From here we see the point of generics, a way to operate
+on any "generic" data, or data with any type. Another way to think about
+generics in a more practical sense is that they are a way to store and work with data types,
+instead of actual data. An example may be comparing different types of movies, instead of different movies.
+
+
+### q
+
+What is "Erasure" with java generics? 
+
+For the code below, what does the code "erase" to? 
+
+```java
+ public static void main(final String args[]) {
+        Shelf<String> favorite_words = shelfBuilder();
+        favorite_words.addItem("Zoetrope");
+        favorite_words.addItem("Succinct");
+        //...        
+        String s = favorite_words.getItem(1);
+        System.out.println(s);
     }
 ```
 
-
 #### s
-We see the output is "Parent Closed!", but the children stay open
+The Java runtime actually doesn't know anything about generics, when you compile
+a Java program with generics in them, at compilation time all "generic" types
+are replaced with what they should be. Essentially, when we use a generic, at
+compilation time the compiler essentially changes the `Shelf` class to only use the `Object` type, so wherever we see a `T` it's replaced with `Object`. From there, every time we do something that should return as a specific type `T`, we replace with a cast to that specific type. 
 
-### q
-If we close all children windows instead of the parent, how does that change the output?
+We see this program then erases to:
 
-#### s
-We will see "Closed!" printed 5 times, and the parent stays open.
-
-### q
-Assume we add this line to the end of `main` to the above program and then close the parents. How does this change the behaviour of the program?
 ```java
- frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // makes it so that closing window exits program
+ public static void main(final String args[]) {
+        Shelf favorite_words = shelfBuilder();
+        favorite_words.addItem((Object)"Zoetrope");
+        favorite_words.addItem((Object)"Succinct");
+        //...        
+        String s = (String)favorite_words.getItem(1);
+        System.out.println(s);
+    }
 ```
-#### s
-We see "Parent Closed!" and all frames close and the program stops.
 
+We see this code won't work as the array doesn't have a size.
 ### q
-Now consider the case in which we close the children windows, and then the parent (from question 4). What would the output be in this case?
-#### s
-"Closed!" 5 times, then parent closed, and the program will stop.
 
-#### q
-Consider if we define the constructor of `ParentJFrame`  instead as:
+Finish the `main` method in the `TestShelf` class above.
+
+Expected output:
+```
+Shakespeare Characters: Hamlet Othello Cordelia Juliet
+Famous Integers: 13 23 42 1729
+```
+
 ```java
-    public ParentJFrame() {
-        for (int i = 0; i < 5; i++) {
-            JFrame f = new JFrame();
-            f.setTitle("Quiz " + i);
-            f.setSize(100, 100);
-            f.setLocation(100 * i, 100 * i);
-            f.addWindowListener(new ChildAdapter());
-            f.setVisible(true);
-            // Line that was added
-            // *******
-            f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // makes it so that closing window exits program
-            // *******
-            frames[i] = f;
+import java.util.ArrayList;
+import java.util.List;
 
+public class Shelf<T> {
+    private List<T> shelfItems;
+
+    private String shelfName;
+
+    public Shelf(String shelfName) {
+        this.shelfName = shelfName;
+        shelfItems = new ArrayList<T>();
+    }
+
+    public int addItem(T item) {
+        shelfItems.add(item);
+        return shelfItems.size();
+    }
+
+    public void printShelf() {
+        System.out.print(shelfName + ": ");
+        for(T item: shelfItems) {
+            System.out.print(item.toString() + " ");
         }
-        this.addWindowListener(new ParentAdapter());
+        System.out.println();
     }
+}
 ```
-If we only close the child window, what is the output?
-#### s
-"Closed!" and the program will stop and all windows will close
 
-### q
-What does the program below produce for a GUI? (You can sketch and upload an image or describe it -- do this without running the program to make sure you understand what each line below is doing).
 ```java
- // For reference
-    /*        N
-    *         |
-    *      W--|--E
-    *         |
-    *         S
-    */
+public class TestShelf {
     public static void main(final String args[]) {
-        JFrame frame = new JFrame();
 
-        JButton bOne = new JButton("1");
-        JButton bTwo = new JButton("2");
-        JButton bThree = new JButton("3");
-        JButton bFour = new JButton("4");
-        JButton bFive = new JButton("5");
-        JButton bSix = new JButton("6");
+        // TODO: Create a shelf to store Shakespeare character names:
+        //       Hamlet, Othello, Cordelia, and Juliet
+        // TODO: Then print the shelf.
 
-        JPanel primes = new JPanel();
-        JPanel composites = new JPanel();
 
-        primes.setLayout(new BorderLayout());
-        composites.setLayout(new BorderLayout());
+        // TODO: Create a shelf to store famous integers:
+        //       13, 23, 42, 1729,
+        // TODO: Then print the shelf.
 
-        primes.add(bTwo, BorderLayout.EAST);
-        primes.add(bThree,BorderLayout.WEST);
-        primes.add(bFive,BorderLayout.NORTH);
 
-        composites.add(bFour, BorderLayout.NORTH);
-        composites.add(bSix, BorderLayout.CENTER);
- 
-        frame.add(primes, BorderLayout.WEST);
-        frame.add(composites, BorderLayout.EAST);
-        frame.add(bOne, BorderLayout.CENTER);
-        frame.pack();
-        frame.setTitle("Quiz J4-2");
-        frame.setSize(400, 400);
-        frame.setLocation(100, 100);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-    }
-```
-#### s
-![](/images/J4-9.png)
-
-### q
-What is the output of the below program if we click the `Multiply` window's `Calculate` button?
-```java
-class SimpleMultiplier extends JFrame {
-    public SimpleMultiplier(JButton button) {
-        this.add(button, BorderLayout.CENTER);
-        this.setTitle("Multiply");
-        this.setSize(100, 100);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
-    public static int calculation(int a, int b) {
-        return a * b;
-    }
-}
-
-class SimpleAdder extends JFrame {
-    public SimpleAdder(JButton button) {
-        button.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.out.println(calculation(4, 2));
-            }
-        });
-        this.add(button, BorderLayout.CENTER);
-        this.setTitle("Add");
-        this.setSize(100, 100);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
-
-    public static int calculation(int a, int b){
-        return a + b;
-    }
-}
-
-```
-```java
-class Main {
-    public static int calculation(int a, int b) {
-        return a / b;
-    }
-    public static void main(final String args[]) {
-        JButton multiplyButton = new JButton("Calculate!");
-        multiplyButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.out.println(calculation(4, 2));
-            }
-        });
-        JButton addButton = new JButton("Calculate!");
-        SimpleMultiplier multiplier = new SimpleMultiplier(multiplyButton);
-        SimpleAdder adder = new SimpleAdder(addButton);
-        multiplier.setVisible(true);
-        adder.setVisible(true);
-    }
-}
-```
-#### s
-Since we make the button's action listener for `SimpleMultiplier` in `Main`, that means it will use the `calculation` function from `Main`, not `SimpleMultiplier`. The output then will be 2.
-
-### q
-From the previous question, what would happen if we instead had clicked the `Add` window's `Calculate` button?
-
-#### s
-We get 6, following similar logic from the last question, except now the action listener was made in `SimpleAdder`.
-
-### q
-
-Consider the following Java swing GUI
-
-```java
-public class RedPillBluePill extends JFrame {
-    JLabel label;
-
-    public RedPillBluePill() {
-        this.setSize(300, 300);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        JPanel panel = new JPanel(new BorderLayout());        
-        JButton red = new JButton("red");
-        JButton blue = new JButton("blue");
-        panel.add(red, BorderLayout.EAST);
-        panel.add(blue, BorderLayout.WEST);
-        label = new JLabel("click a button");
-        this.add(label, BorderLayout.NORTH);
-        this.add(panel, BorderLayout.SOUTH);
-
-        red.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // TODO Auto-generated method stub
-                label.setText("RED");        
-            }
-        });
-
-        blue.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // TODO Auto-generated method stub
-                label.setText("BLUE");
-            }
-
-        });
     }
 }
 ```
 
-Convert the `ActionListener`s to Lambda Functions.
 
 #### s
 ```java
-red.addActionListener((e) -> {label.setText("RED");});
-blue.addActionListener((e) -> {label.setText("BLUE");});
-```
-
-
-### q
-
-Explain why for `ActionListener` you can use a Lambda function but for `WindowListener` you cannot?
-
-
-#### s
-`WindowListener` has multiple methods that must be implemented, `ActionListener` only one, and lambda functions can only represent one.
-
-### q
-
-Write a program that allows you to enter a 6-digit PIN, like you would on your smartphone to unlock it. It should have the following layout:
-
-```
-
- [ DISPLAY PIN AS TYPED ]
-
-   [ 1 ]  [ 2 ] [ 3 ] 
-   
-   [ 4 ]  [ 5 ] [ 6 ]    
-   
-   [ 7 ]  [ 8 ] [ 9 ]       
-
-   [ < ]  [ 0 ] 
-
-````
-
-Where `[ < ]` is a "backspace" button. The display should show the PIN as it is typed, and when the user enters the PIN 202113, the display changes to "YOU MAY ENTER!"
-
-#### s
-
-``` java
-import java.awt.event.*;
-import java.awt.*;
-
-import javax.swing.*;
-
-class Pin extends JFrame {
-    public Pin() {
-        this.setSize(300, 300);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JLabel label = new JLabel("");
-        JPanel panelA = new JPanel(new BorderLayout());
-        JPanel panelB = new JPanel(new BorderLayout());
-        JPanel panelC = new JPanel(new BorderLayout());
-        JPanel panelD = new JPanel(new BorderLayout());
-        JButton one = new JButton("[1]");
-        one.addActionListener((e) -> {
-            label.setText(label.getText() + "1");
-        });
-        panelA.add(one, BorderLayout.WEST);
-        JButton two = new JButton("[2]");
-        two.addActionListener((e) -> {
-            label.setText(label.getText() + "2");
-        });
-        panelA.add(two, BorderLayout.CENTER);
-        JButton three = new JButton("[3]");
-        three.addActionListener((e) -> {
-            label.setText(label.getText() + "3");
-        });
-        panelA.add(three, BorderLayout.EAST);
-        JButton four = new JButton("[4]");
-        four.addActionListener((e) -> {
-            label.setText(label.getText() + "4");
-        });
-        panelB.add(four, BorderLayout.WEST);
-        JButton five = new JButton("[5]");
-        five.addActionListener((e) -> {
-            label.setText(label.getText() + "5");
-        });
-        panelB.add(five, BorderLayout.CENTER);
-        JButton six = new JButton("[6]");
-        six.addActionListener((e) -> {
-            label.setText(label.getText() + "6");
-        });
-        panelB.add(six, BorderLayout.EAST);
-        JButton seven = new JButton("[7]");
-        seven.addActionListener((e) -> {
-            label.setText(label.getText() + "7");
-        });
-        panelC.add(seven, BorderLayout.WEST);
-        JButton eight = new JButton("[8]");
-        eight.addActionListener((e) -> {
-            label.setText(label.getText() + "8");
-        });
-        panelC.add(eight, BorderLayout.CENTER);
-        JButton nine = new JButton("[9]");
-        nine.addActionListener((e) -> {
-            label.setText(label.getText() + "9");
-        });
-        panelC.add(nine, BorderLayout.EAST);
-        JButton zero = new JButton("[0]");
-        zero.addActionListener((e) -> {
-            label.setText(label.getText() + "0");
-        });
-        panelD.add(zero, BorderLayout.WEST);
-        JButton back = new JButton("[<]");
-        back.addActionListener((e) -> {
-            label.setText(label.getText().substring(0,
-                    label.getText().length() - 1 > 0 ? label.getText().length() - 2 : 0));
-        });
-        panelD.add(back, BorderLayout.CENTER);
-        JPanel middle = new JPanel(new BorderLayout());
-        JPanel bottom = new JPanel(new BorderLayout());
-        middle.add(label, BorderLayout.NORTH);
-        middle.add(panelA, BorderLayout.CENTER);
-        middle.add(panelB, BorderLayout.SOUTH);
-        bottom.add(panelC, BorderLayout.NORTH);
-        bottom.add(panelD, BorderLayout.CENTER);
-        this.add(middle, BorderLayout.NORTH);
-        this.add(bottom, BorderLayout.CENTER);
-        label.addPropertyChangeListener("text", (e) -> {
-            if (label.getText().equals("202113")) {
-                label.setText("YOU MAY ENTER");
-            }
-        });
-    }
-
     public static void main(String[] args) {
-        Pin p = new Pin();
-        p.setVisible(true);
+        Shelf<String> shakespeare = new Shelf<>("Shakespeare Characters");
+        shakespeare.addItem("Hamlet");
+        shakespeare.addItem("Othello");
+        shakespeare.addItem("Cordelia");
+        shakespeare.addItem("Juliet");
+        Shelf<Integer> integers = new Shelf<>("Famous Integers");
+        integers.addItem(13);
+        integers.addItem(23);
+        integers.addItem(42);
+        integers.addItem(1729);
+        shakespeare.printShelf();
+        integers.printShelf();
+    }
+```
+
+### q 
+
+Consider the following code snippets for a `LinkedList` you may implement and a main method:
+
+```java
+public class LinkedList {
+   private class Node {
+      int data;
+      Node next;
+   }
+   Node head;
+
+   void add(int data);
+   int get(int idx);
+   //...   
+```
+
+```java
+public class TestingLinkedList {
+  public class static main(String args[]) {
+     LinkedList ll = new LinkedList();
+     
+     for(int i = 0; i < 100000; i++){
+         ll.add(i * 3);
+     }
+     
+     for(int i = 0; i < 100000; i++){
+         System.out.println("" + ll.get(i)); //<-- MARK
+     }
+  }
+}
+
+```
+
+Explain why the line with `MARK` is extremely inefficient? Use Big-O to explain.
+
+#### s
+A linked list has a search time of `O(n)`, since you must iterate through the
+whole list to know if something is in it or not. Therefore, the for loop that
+contains the marked line will have a cost of `O(n)` every single call, and it
+will be called once for each item. This means the total runtime cost will be
+`O(n^2)`, which is not good :(.
+
+### q
+
+Continuing with the example above, explain why expanding `LinkedList` to implement `Iterable` solves the inefficiency problem you described above. 
+
+#### s
+
+`Iterable` will keep track of where we are in the linked list, essentially holding a pointer to the last item we were at. This means everytime we get the next item, it'll just return `next` of the current location, and move the pointer forward to the next item. This results in a loop that is only `O(n)`, as we only see every item at most once.
+
+### q
+
+Finish the `main` method below to use the fibonacci iterator to print out the sequence: `1 2 3 5 8 13 21 ...`
+
+```java
+import java.util.Iterator;
+
+class Fibonacci implements Iterable<Integer> {
+    public static void main(final String args[]) {
+        Fibonacci fibonacci = new Fibonacci(21);
+
+        // TODO:  Use the fibonacci iterator to print out the sequence: 1 2 3 5 8 13 21
+    }
+
+    private int max;
+
+    public Fibonacci(int max) {
+        this.max = max;
+    }
+
+    public Iterator<Integer> iterator() {
+        return new FibonacciIterator();
+    }
+
+    private class FibonacciIterator implements Iterator<Integer> {
+        int current = 1;
+        int previous = 0;
+
+        @Override
+        public boolean hasNext() {
+            return current + previous <= max;
+        }
+
+        @Override
+        public Integer next() {
+            int tmp = current;
+            current += previous;
+            previous = tmp;
+            return current;
+        }
     }
 }
 ```
 
-### q
-
-For the above program you wrote above, add a new feature. This could be to allow variable length PINs, match different PINs, allow users to select a PIN and then confirm it later, etc.
-
-Describe your extension. 
 
 #### s
-Answers may vary!
+Iterators are so cool!
 
-
-### q
-
-Add a feature were you listen for key strokes, like '1' or '2' for entering the PIN, and allow the user to either type or use the mouse
-
-#### s
-
-For this you can use a [KeyListener](https://docs.oracle.com/javase/tutorial/uiswing/events/keylistener.html)
-
+```java
+  public static void main(final String args[]) {
+      Fibonacci fibonacci = new Fibonacci(21);
+      for(int i : fibonacci){
+          System.out.print(i+" ");
+      }
+  }
+```
 
 ### q
 
-Add a secret PIN that get's checked. If the user guesses the PIN, have your GUI change in some interesting way, such as change colors, or something else visual
+Explain why the `Comparable` interface is an interface rather than class?
 
 #### s
 
-Answers may vary
+The only thing we want for something to be comparable is a function that tells us if one of it is greater than the other. That means we just want the class to define one function and thats it. We could do this using an abstract class, but we wouldn't use any of the other functionality an abstract class provides, and then the class couldn't extend any other class either, so we'd be using something with more power than we need, and limiting our options in the future. So instead we just use an interface.
+
+### q
+
+Add the `compareTo` method in the `Car` class above. So that the main method will print out:
+
+```
+Name: Lamborghini Top Speed: 225
+Name: Porsche Top Speed: 202
+Name: Mustang Top Speed: 144
+Name: Jeep Top Speed: 110
+```
 
 
+```java
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class Car implements Comparable<Car> {
+    public static void main(String[] args) {
+        List<Car> carsList = new ArrayList<>();
+        carsList.add(new Car("Porsche", 202));
+        carsList.add(new Car("Jeep", 110));
+        carsList.add(new Car("Mustang", 144));
+        carsList.add(new Car("Lamborghini", 225));
+
+        Collections.sort(carsList);
+        for(Car car : carsList) {
+            System.out.println("Name: " + car.getName() + " Top Speed: " + car.getTopSpeed());
+        }
+    }
+    private String name;
+    private Integer topSpeed;
+
+    public Car(String name, Integer topSpeed) {
+        this.name = name;
+        this.topSpeed = topSpeed;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Integer getTopSpeed() {
+        return topSpeed;
+    }
+
+    // TODO: Complete the Car class by adding the compareTo method
+    //       needed to correctly implement Comparable<Car>.
+
+}
+
+```
+
+
+#### s
+```java
+	public int compareTo(Car other) {
+		return this.topSpeed - other.topSpeed;
+	}
+```
+
+# Grading rubric and submission
+
+Use git, as discussed in Lab 0, to submit your work in a repo called `gitusername-worksheetJ3`. You will be graded on the following:
+
+|Item | Points |
+|the name of the repo for this lab matches the pattern  `gitusername-worksheetJ3` | 10 |
+|the grader has been added as a collaborator to the repo with an invite timestamp during the lecture| 10 |
+|the repo has been made private | 10 |
+|the name of the answers file in your repo is  `worksheet-J3.md` | 10 |
+|worksheet questions have been completed | 60 |
+|TOTAL | 100 |

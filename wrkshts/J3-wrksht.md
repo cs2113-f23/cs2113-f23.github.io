@@ -1,680 +1,512 @@
 ---
 layout: worksheet
 permalink: /worksheet/j3
-showsolution: true
+showsolution: false
 ---
 
 # Worksheet: J3
 
 Worksheets are self-guided activities that reinforce lectures. They are not graded for accuracy, only for completion. Worksheets are due by Sunday night before the next lecture.
 
-Submit a file called `worksheet-J3.md` in your repo for this assignment.
+Submit a file called `worksheet-J2.md` in your repo for this assignment.
 
 ## Note
 
-Attempt to answer these questions before running the code. This will improve your ability to analyize and reason about code without an IDE or compiler. This skill we be helpful on the exams.
+Attempt to answer these questions before running the code. This will improve your ability to analyze and reason about code without an IDE or compiler. This skill we be helpful on the exams.
 
 ## Questions
 
+
 ### q
-
-Consider the class declaration below:
-
-```java
-// Is this possible?
-public class Lion extends Mammal, Carnivore {
-    // ...
-}
-```
-
-* Explain why the following class declaration is not possible in Java. 
-* What are the limitations of the  `extends` key word?
-* How can you accomplish this inheritance structure task in Java?
+Define **polymorphism** in the context of Java and provide one example where it is valuable? 
 
 #### s
 
-Java classes can only extend from one class! So we can have `Lion extends Mammal` or `Lion extends Carnivore`, but not both. To accomplish functionality similar to this, we would have:
-
-```java
-public class Lion extends Mammal implements Carnivore {
-    // ...
-}
-```
-As it makes sense for an animal to inherit from the specific class it is (Mammalia), and for it to have an interface that represents how it interacts (or interfaces) with food.
-
-### q
-
-What are some of the functional differences between an `abstract class` and an `interface`? Use the example below to answer this question.
-
-```java
-public abstract class Employee {
-    // ...
-}
-
-// vs.
-
-public interface Employee {
-    //...
-}
-```
-
-
-
-#### s
-Abstract classes and interfaces can:
-
-* Provide _just_ method declarations that a class must realize
-
-Abstract classes do (and interfaces do not):
-
-* Provide methods and constructors a child class can choose to use, or override
-* Provide inherited class variables
-* Have access modifiers for inherited methods
-* Require the child class to inherit only itself, and no other class
+**Polymorphism** in Java allows multiple implementation of the same interface. One example will be the `Point` and `LabPoint` classes we implementated in class where we can have a `toString()` method in both `Point` and `LabPoint` that prints out different information.
 
 
 ### q
 
-Consider the interfaces for a `Stack` and `Queue` of `int`s. 
-```java
-public interface Stack {
-   public void push(int v);
-   public int pop();
-   public int peek();
-}
-
-public interface Queue {
-   public void enqueue(int v);
-   public int dequeue();
-   public int peek();
-}
-```
-
-
-Now suppose you had a `LinkedList` implementation to store `int`s with the following methods defined. 
+Consider the following program from the class notes
 
 ```java
-public class LinkedList implements Stack, Queue {
-  public LinkedList() {/*...*/}
-  public void addToFront(int v) {/*...*/}
-  public int rmFromFront() {/*...*/}
-  public void addToBack(int v) {/*...*/}
-  public void rmFromBack() {/*...*/}
-  
-  //FINISH HERE
-  
-}
-```
+public class Ex3 {
+  public static void main(String[] args) {
+    Random   rand = new Random(System.currentTimeMillis());
+    Point    v    = new Point(3, 4);
+    LabPoint w    = new LabPoint(5, 2, "A");
+    String   x    = "I'm a string";
+    Scanner  y    = new Scanner(System.in);
 
-Using those methods in `LinkedList` complete the realization of a `Stack` and `Queue`:
+    Object u;
+    int i = rand.nextInt(4);
 
-#### s
-
-
-```java
-
-public void push(int v) { 
-    addToFront(v);
-}
-public int pop() { 
-    rmFromFront(v);
-}
-public void enqueue(int v) {
-    addToBack(v);
-}
-public int dequeue() {
-    rmFromFront(v);
-}
-public int peek() {
-    int v = rmFromFront(v); 
-    addToFront(v); 
-    return v;
-}
-```
-
-
-### q
-
-Rewrite the `Stack` and `Queue` interfaces from above to be generic, as well as the `LinkedList`. Explain how this is now generic to manage collections of any class. 
-
-#### s
-
-```java
-public interface Stack<T> {
-   public void push(T v);
-   public T pop();
-   public T peek();
-}
-
-public interface Queue<T> {
-   public void enqueue(T v);
-   public T dequeue();
-   public T peek();
-}
-
-public class LinkedList<T> implements Stack<T>, Queue<T> {
-
-  public LinkedList() {/*...*/}
-  public void addToFront(T v) {/*...*/}
-  public T rmFromFront() {/*...*/}
-  public void addToBack(T v) {/*...*/}
-  public void rmFromBack() {/*...*/}
-
-  public void push(T v) { 
-    addToFront(v);
-  }
-  public T pop() { 
-    rmFromFront(v);
-  }
-  public void enqueue(T v) {
-    addToBack(v);
-  }
-  public T dequeue() {
-    rmFromFront(v);
-  }
-  public T peek() {
-    T v = rmFromFront(v); 
-    addToFront(v); 
-    return v;
+    if( i == 0 )
+      u = v;
+    else if( i == 1 )
+      u = w;
+    else if( i == 2 )
+      u = x;
+    else
+      u = y;
+    System.out.println(u); //<--
   }
 }
 ```
 
-### q
-
-Suppose you have interfaces `Adder` and `Multiplier`:
-
-```java
-public interface Adder<T> {
-    T add(T a, T b);
-}
-```
-
-```java
-public interface Multiplier<T> {
-    T multiply(T a, T b);
-}
-```
-
-Finish the implementation of the `IntegerCalculator` and `FloatCalculator` classes below. 
-
-```java
-public class IntegerCalculator implements Adder<Integer>, Multiplier<Integer> {
-    private String calculatorName;
-
-    public IntegerCalculator(String calculatorName) {
-        this.calculatorName = calculatorName;
-    }
-
-    public String getCalculatorName() {
-        return calculatorName;
-    }
-
-    // TODO: add the methods needed to implement the adder and multiplier interfaces.
-}
-```
-
-```java
-public class FloatCalculator implements  Adder<Float>, Multiplier<Float> {
-    private String calculatorName;
-
-    public FloatCalculator(String calculatorName) {
-        this.calculatorName = calculatorName;
-    }
-
-    public String getCalculatorName() {
-        return calculatorName;
-    }
-
-    // TODO: add the methods needed to implement the adder and multiplier interfaces.
-}
-```
+Explain how polymorphism makes this program possible. 
 
 #### s
-
-```java
-public class IntegerCalculator implements Adder<Integer>, Multiplier<Integer> {
-    // ...
-	public Integer add(Integer a, Integer b) {
-		return a + b;
-	}
-
-	public Integer multiply(Integer a, Integer b) {
-		return a * b;
-	}
-}
-```
-
-```java
-public class FloatCalculator implements  Adder<Float>, Multiplier<Float> {
-    // ...
-	public Float add(Float a, Float b) {
-		return a + b;
-	}
-
-	public Float multiply(Float a, Float b) {
-		return a * b;
-	}
-}
-```
+Since every class that does not have the `extends` keyword implicitly extends the `Object` class, the `Object u` declaration makes `u` capable of "morphing" into any of the 4 variables `v, w, x, y`.
 
 ### q
-
-Review the following Java util data structures:
-
-* [`ArrayList`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html) 
-* [`Hashtable`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Hashtable.html)
-* [`TreeMap`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/TreeMap.html)
-
-For each, 
-* Provide a two-to-three sentence description of each class
-* For each interface realized by these classes, also provide a two-to-three sentence description. 
-* Finally draw a UML diagram that connects all of these classes back to object
-
-#### s
-
-`ArrayList`
-
-* `ArrayList` is an array of some type, that implements the `List` interface, meaning it has methods so the user of `ArrayList` has precise control over where in the list each element is inserted. The user can access elements by their integer index (position in the list), and search for elements in the list. When the array reaches its total capacity, it is resized.
-* `AbstractList`
-* See first answer for an explanation of the `List` interface. `Cloneable`, means that there is some `clone` method that will return a complete copy in memory of the implementing class, and `Serializable`, provides a method that guarantees the class can be "serialized", or turned into some ascii representation.
-
-
-`HashTable`
-* `Hashtable` maps objects of one type to another, by calling `hashCode` on the key object, in order to find the value. This means that any type used for the key must implement that method. Similar to the hashmap in the boggle project, the Hashtable class has an array of buckets, and when getting a value, the key hash maps to one of these buckets, which is then searched.
-* `Map`, `Cloneable`, `Serializable`
-* No other class extends `Dictionary`, but many classes implement map, such as `TreeMap` and `AbstractMap`.
-* `Map` Provides methods so a user can pass some sort of key, and a value is returned. It also guarantees there is some list of keys, values, and key-value mappings available. Finally, it provides users the ability to check if the mapping is empty, if it contains a key or value, and a way to delete or update key-value pairs. See previous for `Cloneable` and `Serializable`
-
-`TreeMap`
-
-* Another map, except that instead of implementing it using a hash table, it is implemented using a Red-Black tree (see [here](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree)) for a refresher). What happens, is we search for a node that represents our key-value pair.
-* `AbstractMap`, which is an abstract class implementing `Map` but with only some basic methods implemented
-* `NavigableMap`, `Cloneable`, `Serializable`
-* `NavigableMap` is similar to the `Map` interface, except it also requires that all keys and values can be sorted. The additional methods required are ways for the user to get either the max/min keys and values, or the key/value that is immediately greater/lesser than a given key or value. We see that since a Red-Black tree is a sorted binary tree, that means the data stored in it must be sorted, and so we implement `NavigableMap`.
-
-
-### q
-
-Take a look at the documentation for `LinkedHashSet`: [https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/LinkedHashSet.html](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/LinkedHashSet.html)
-and `HashSet`:
-[https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashSet.html](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashSet.html)
-
-When would it be preferable to use a `LinkedHashSet` instead of a `HashSet`?
-
-
-#### s
-We would use the `LinkedHashSet` when we have a set of items that we want to keep in a specific unchanging order. For example, if we want a set of colors, we'd use `HashSet`, since there can only be at most one instance of a color (it wouldn't make sense to store two identical reds), but there isn't an order to colors (the rainbow is only one way to order them, but it's not THE way to). If we wanted a set of integers, we'd want to use `LinkedHashSet`, since integers are inherently comparable and sortable, and we don't want them to be in a random order.
-
-### q
-
-The code below does not use Java generics. Update it to do so. Notably, there should not need casting, but no, the solution isn't just removing the `(String)` casting before the `.get` method. 
+What is the output of this program? You should be able to do this without running the program!
 
 ```java
-import java.util.HashMap;
-
-public class TestHashMap {
-
-    public static void main (String[] argv) {
-        // Create a new hashmap.
-        Hashtable fabFour = new HashMap();
-
-        // Insert four key and value pairs.
-        fabFour.put("John", "John Lennon");
-        fabFour.put("Paul", "Paul McCartney");
-        fabFour.put("George", "George Harrison");
-        fabFour.put("Ringo", "Ringo Star");
-
-        // Use a key to retrieve a value.
-        String fullName = (String) fabFour.get("Ringo");
-
-        // Prints "Ringo Star"
-        System.out.println(fullName);
+class A {
+    public String toString(){
+        return "A";
     }
 }
-```
 
-#### s
-
-```java
-public class TestHashMap {
-
-    public static void main(String[] argv) {
-        // Create a new hashmap.
-        HashMap<String,String> fabFour = new HashMap<String,String>();
-
-        // Insert four key and value pairs.
-        fabFour.put("John", "John Lennon");
-        fabFour.put("Paul", "Paul McCartney");
-        fabFour.put("George", "George Harrison");
-        fabFour.put("Ringo", "Ringo Star");
-
-        // Use a key to retrieve a value.
-        String fullName = fabFour.get("Ringo");
-
-        // Prints "Ringo Star"
-        System.out.println(fullName);
+class B extends A{
+    public String toString() {
+        return "B";
     }
 }
-```
 
-### q
-
-Provide a 1-to-2 paragraph explanation for why we need Generics. You can use the sample code (above and below) to over this explanation.
-
-#### s
-
-A lot of what we do as computer scientists, is writing and using abstractions of
-different things. Methods and functions provide ways for us to perform some
-operation on some data of a specific type, such as integers, over and over
-again, such as adding two numbers. Data structures such as classes provide ways
-for us to give data some shape and functionality, if it can't just be
-represented by a number (as most things can't). What if we want to operate on
-some data, but we don't care about the specific type of the data, such as
-putting it in a list. From here we see the point of generics, a way to operate
-on any "generic" data, or data with any type. Another way to think about
-generics in a more practical sense is that they are a way to store and work with data types,
-instead of actual data. An example may be comparing different types of movies, instead of different movies.
-
-
-### q
-
-What is "Erasure" with java generics? 
-
-For the code below, what does the code "erase" to? 
-
-```java
- public static void main(final String args[]) {
-        Shelf<String> favorite_words = shelfBuilder();
-        favorite_words.addItem("Zoetrope");
-        favorite_words.addItem("Succinct");
-        //...        
-        String s = favorite_words.getItem(1);
-        System.out.println(s);
-    }
-```
-
-#### s
-The Java runtime actually doesn't know anything about generics, when you compile
-a Java program with generics in them, at compilation time all "generic" types
-are replaced with what they should be. Essentially, when we use a generic, at
-compilation time the compiler essentially changes the `Shelf` class to only use the `Object` type, so wherever we see a `T` it's replaced with `Object`. From there, every time we do something that should return as a specific type `T`, we replace with a cast to that specific type. 
-
-We see this program then erases to:
-
-```java
- public static void main(final String args[]) {
-        Shelf favorite_words = shelfBuilder();
-        favorite_words.addItem((Object)"Zoetrope");
-        favorite_words.addItem((Object)"Succinct");
-        //...        
-        String s = (String)favorite_words.getItem(1);
-        System.out.println(s);
-    }
-```
-
-We see this code won't work as the array doesn't have a size.
-### q
-
-Finish the `main` method in the `TestShelf` class above.
-
-Expected output:
-```
-Shakespeare Characters: Hamlet Othello Cordelia Juliet
-Famous Integers: 13 23 42 1729
-```
-
-```java
-import java.util.ArrayList;
-import java.util.List;
-
-public class Shelf<T> {
-    private List<T> shelfItems;
-
-    private String shelfName;
-
-    public Shelf(String shelfName) {
-        this.shelfName = shelfName;
-        shelfItems = new ArrayList<T>();
-    }
-
-    public int addItem(T item) {
-        shelfItems.add(item);
-        return shelfItems.size();
-    }
-
-    public void printShelf() {
-        System.out.print(shelfName + ": ");
-        for(T item: shelfItems) {
-            System.out.print(item.toString() + " ");
-        }
-        System.out.println();
+class C extends A {
+    public String toString() {
+        return super.toString();
     }
 }
-```
 
-```java
-public class TestShelf {
+class D extends C {
+    public String toString() {
+        return super.toString();
+    }
+}
+
+public class tmp {
     public static void main(final String args[]) {
-
-        // TODO: Create a shelf to store Shakespeare character names:
-        //       Hamlet, Othello, Cordelia, and Juliet
-        // TODO: Then print the shelf.
-
-
-        // TODO: Create a shelf to store famous integers:
-        //       13, 23, 42, 1729,
-        // TODO: Then print the shelf.
-
-
+        D d = new D();
+        System.out.println(d.toString());
     }
 }
 ```
 
-
 #### s
+The output is `A` because `class D` extends `class C` and `class C` extends `class A` where both classes `C, D` have their `toString()` function return `super.toString()` and the `toString()` method of `class A` returns a single character `A`.
+
+### q
+What is the output of this program? You should be able to do this without running the program!
+
 ```java
-    public static void main(String[] args) {
-        Shelf<String> shakespeare = new Shelf<>("Shakespeare Characters");
-        shakespeare.addItem("Hamlet");
-        shakespeare.addItem("Othello");
-        shakespeare.addItem("Cordelia");
-        shakespeare.addItem("Juliet");
-        Shelf<Integer> integers = new Shelf<>("Famous Integers");
-        integers.addItem(13);
-        integers.addItem(23);
-        integers.addItem(42);
-        integers.addItem(1729);
-        shakespeare.printShelf();
-        integers.printShelf();
+class A {
+    public String toString() {
+        return "A";
     }
-```
-
-### q 
-
-Consider the following code snippets for a `LinkedList` you may implement and a main method:
-
-```java
-public class LinkedList {
-   private class Node {
-      int data;
-      Node next;
-   }
-   Node head;
-
-   void add(int data);
-   int get(int idx);
-   //...   
-```
-
-```java
-public class TestingLinkedList {
-  public class static main(String args[]) {
-     LinkedList ll = new LinkedList();
-     
-     for(int i = 0; i < 100000; i++){
-         ll.add(i * 3);
-     }
-     
-     for(int i = 0; i < 100000; i++){
-         System.out.println("" + ll.get(i)); //<-- MARK
-     }
-  }
+    
+    public String fancyToString() {
+        return "~~A~~";
+    }
 }
 
-```
+class B extends A {
+    public String toString() {
+        A letterA = this;
+        return letterA.fancyToString();
+    }
+    public String fancyToString() {
+        return "~~B~~";
+    }
+}
 
-Explain why the line with `MARK` is extremely inefficient? Use Big-O to explain.
-
-#### s
-A linked list has a search time of `O(n)`, since you must iterate through the
-whole list to know if something is in it or not. Therefore, the for loop that
-contains the marked line will have a cost of `O(n)` every single call, and it
-will be called once for each item. This means the total runtime cost will be
-`O(n^2)`, which is not good :(.
-
-### q
-
-Continuing with the example above, explain why expanding `LinkedList` to implement `Iterable` solves the inefficiency problem you described above. 
-
-#### s
-
-`Iterable` will keep track of where we are in the linked list, essentially holding a pointer to the last item we were at. This means everytime we get the next item, it'll just return `next` of the current location, and move the pointer forward to the next item. This results in a loop that is only `O(n)`, as we only see every item at most once.
-
-### q
-
-Finish the `main` method below to use the fibonacci iterator to print out the sequence: `1 2 3 5 8 13 21 ...`
-
-```java
-import java.util.Iterator;
-
-class Fibonacci implements Iterable<Integer> {
+public class LetterPrinter {
     public static void main(final String args[]) {
-        Fibonacci fibonacci = new Fibonacci(21);
+        B letterB = new B();
+        System.out.print(letterB.toString() + " ");
+        
+        A letterA = letterB;
+        System.out.println(letterA.toString());
+    }
+}
+```
 
-        // TODO:  Use the fibonacci iterator to print out the sequence: 1 2 3 5 8 13 21
+#### s
+* The output of the program is `~~B~~ ~~B~~`.
+* With polymorphism, `letterB.toString()` will make `letterA` of `A letterA = this;` in `class B` to `class B`, which results in `letterA.fancyToString();` return `~~B~~`. Similarly, in the main function, when `A letterA = letterB`, it is morphed into `class B` rather than `class A`, resulting in `letterA.toString()` give the same output as the first print statement `~~B~~`.
+
+### q
+What is the output of this program? You should be able to do this without running the program!
+
+```java
+class A {
+    public String toString() {
+        return "A";
+    }
+    
+    public String fancyToString() {
+        return "~~A~~";
+    }
+}
+
+class B extends A {
+    public String fancyToString(){
+        return "~~B~~";
+    }
+}
+
+public class LetterPrinter {
+    public static void main(final String args[]) {
+        B letterB = new B();
+        System.out.print(letterB.toString() + " ");
+        
+        A letterA = letterB;
+        System.out.println(letterA.toString());
+    }
+}
+```
+
+#### s
+* The output of this program is `A A`.
+* Note that `class B` does not have a `toString()` method, which means calling `letterB.toString()` will result in the `toString()` method of `class A` since `class B extends A`. Similarly, although `A letterA = letterB` morphed `letterA` to `class B`, it still uses the `toString()` method of `class A`.
+
+### q
+Consider the first two class declarations. What is the output of compiling the program below? 
+```java
+abstract class Letter {
+    protected boolean uppercase;
+
+    abstract String get_name();
+
+    abstract int get_alphabet_position();
+}
+```
+```java
+class A extends Letter {
+    public String toString() {
+        return "A";
     }
 
-    private int max;
-
-    public Fibonacci(int max) {
-        this.max = max;
+    protected int get_alphabet_position() {
+        return 1;
     }
 
-    public Iterator<Integer> iterator() {
-        return new FibonacciIterator();
-    }
-
-    private class FibonacciIterator implements Iterator<Integer> {
-        int current = 1;
-        int previous = 0;
-
-        @Override
-        public boolean hasNext() {
-            return current + previous <= max;
-        }
-
-        @Override
-        public Integer next() {
-            int tmp = current;
-            current += previous;
-            previous = tmp;
-            return current;
-        }
+    private String get_name() {
+        return "A";
     }
 }
 ```
 
 
-#### s
-Iterators are so cool!
-
-```java
-  public static void main(final String args[]) {
-      Fibonacci fibonacci = new Fibonacci(21);
-      for(int i : fibonacci){
-          System.out.print(i+" ");
-      }
-  }
-```
-
-### q
-
-Explain why the `Comparable` interface is an interface rather than class?
 
 #### s
-
-The only thing we want for something to be comparable is a function that tells us if one of it is greater than the other. That means we just want the class to define one function and thats it. We could do this using an abstract class, but we wouldn't use any of the other functionality an abstract class provides, and then the class couldn't extend any other class either, so we'd be using something with more power than we need, and limiting our options in the future. So instead we just use an interface.
+The program does not compile because the `get_name()` in `class A` attempts to override the abstract method `get_name()` in abstract class `Letter` with reduced visibility `private`.
 
 ### q
+If we change the implementation of `A` to the following, what does the code below output?
+```java
+abstract class Letter {
+    protected boolean uppercase;
 
-Add the `compareTo` method in the `Car` class above. So that the main method will print out:
+    abstract String get_name();
 
+    abstract int get_alphabet_position();
+}
 ```
-Name: Lamborghini Top Speed: 225
-Name: Porsche Top Speed: 202
-Name: Mustang Top Speed: 144
-Name: Jeep Top Speed: 110
-```
+```java
+class A extends Letter {
+    public String toString() {
+        return "A";
+    }
 
+    public int get_alphabet_position() {
+        return 1;
+    }
+
+    protected String get_name() {
+        return "A";
+    }
+}
+```
 
 ```java
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-public class Car implements Comparable<Car> {
-    public static void main(String[] args) {
-        List<Car> carsList = new ArrayList<>();
-        carsList.add(new Car("Porsche", 202));
-        carsList.add(new Car("Jeep", 110));
-        carsList.add(new Car("Mustang", 144));
-        carsList.add(new Car("Lamborghini", 225));
-
-        Collections.sort(carsList);
-        for(Car car : carsList) {
-            System.out.println("Name: " + car.getName() + " Top Speed: " + car.getTopSpeed());
-        }
+public class Main {
+    public static void main(final String args[]) {
+        A a = new A();
+        System.out.println("A: " + a.get_alphabet_position());
     }
-    private String name;
-    private Integer topSpeed;
-
-    public Car(String name, Integer topSpeed) {
-        this.name = name;
-        this.topSpeed = topSpeed;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Integer getTopSpeed() {
-        return topSpeed;
-    }
-
-    // TODO: Complete the Car class by adding the compareTo method
-    //       needed to correctly implement Comparable<Car>.
-
 }
 
 ```
 
+#### s
+The output of the program is `A: 1`.
+
+### q
+What is the output of this program? You should do this without running the program.
+
+```java
+class A {
+    public String toString() {
+        return "A";
+    }
+}
+
+class B extends A {
+    public String toString() {
+        return "B";
+    }
+}
+
+public class PolymorphicOverload {
+    public void foo(B letterB1, B letterB2) {
+        // 2
+        System.out.println("foo2: " + letterB1 + " " + letterB2);
+    }
+
+    public void foo(A letterA1, A letterA2) {
+        // 1
+        System.out.println("foo1: " + letterA1 + " " + letterA2);
+    }
+    public static void main(String args[]) {
+        PolymorphicOverload f = new PolymorphicOverload();
+        B letterB = new B();
+        A letterA = (A) new B();
+        f.foo(letterB, letterA);
+    }
+}
+```
 
 #### s
+* The output of the program is `foo1: B B`.
+* While `letterB` and `letterA` are both `class B`, the declaration makes `f.foo(letterB, letterA)` look for the best method to fit `f.foo(class B, class A)` due to the static declaration of `letterA` being `class A`. This means the method `public void foo(A letterA1, A letterA2)` is called in the main function because it is the best fitting method where both parameters passed in can be `class A` (remember `B` extends `A`). Therefore, the output is `foo1: B B`.
+
+
+### q
+Assume that `class A` is implemented in such a way so that the program will compile and run. What is the output? You should do this problem without running the code.
+
 ```java
-	public int compareTo(Car other) {
-		return this.topSpeed - other.topSpeed;
-	}
+public class Temp {
+    public static void foo(A a) {
+        System.out.println("foo1: " + a.get_name());
+    }
+    public static void foo(Letter a) {
+        System.out.println("foo2: " + a.get_name());
+    }
+    public static void main(final String args[]) {
+        Letter a = (Letter) new A();
+        foo(a);
+    }
+}
 ```
+
+#### s
+The output of this program is `foo2: A`. The variable `a` is declared as `Letter class` which will make `foo(a)` run the second method with declaration `public static void foo(Letter a)`.
+
+
+### q
+Suppose you had the following class structures
+
+
+```java
+public class Species {
+    String genus;
+    String species;
+    public Species(String g, String s) {
+        genus = g;
+        species = s;
+    }
+    
+    public Species(Species s) {
+        genus = s.genus;
+        species = s.species;
+    }
+    
+    public String toString() {
+        return genus + " " + species;
+    }
+}
+
+public class Breed extends Species {
+    protected String breed;
+
+    public Breed(String b, String g, String s) {
+        super(g, s);
+        breed = b;
+    }
+
+    public Breed(String b, Species s) {
+        super(s);
+        breed = b;
+    }
+
+    public String toString() {
+        return super.toString() + "(" + breed + ")";
+    }
+}
+
+public class Pet {
+    String name;
+    Species species;
+
+    public Pet(String n, Species s) {
+       name = n;
+       species = s;
+    }
+
+    public String toString() {
+        String ret = "Name: " + name + "\n";
+        ret += "Species: " + species;
+        retunr ret;
+    }       
+}
+```
+
+
+What is the output of the following snippet of code? If there is an ERROR, describe the error. **You should not need to run the code to determine the output**.
+
+```java
+    
+   Species dog = new Species("Canis","Familaris");
+   Breed shorthair = new Breed("shorthair", new Species("Felis","Catus"));
+   Pet fluffy = new Pet("fluffy", new Breed("pomeranian", dog));
+   Pet george = new Pet("george", dog);
+   Pet brutus = new Pet("brutus", (Species) shorthair);
+   
+   System.out.println(fluffy);
+   System.out.println(george);
+   System.out.println(brutus);
+```
+
+
+#### s
+```
+Name: fluffy
+Species: Canis Familaris(pomeranian)
+Name: george
+Species: Canis Familaris
+Name: brutus
+Species: Felis Catus(shorthair)
+```
+
+
+### q
+
+Consider the following classes
+
+```java
+public class A {
+    public int foo() {
+        return 42;
+    }
+
+    public int bar() {
+        return foo() + 8;
+    }
+}
+
+public class B extends C {
+    public int foo() {
+        return 41;
+    }
+
+    public char baz() {
+        return "y";
+    }
+}
+
+public class C extends A {
+    public char baz() {
+        return "x";
+    }
+}
+
+public class D extends A {
+    public int bar() {
+        return 7;
+    }
+}
+
+public class E extends C {
+    public int bar() {
+        return foo() + 20;
+    }
+}
+
+```
+
+Draw the class hierarchy for the above classes, that is the UML diagram that simply shows who inherits from whom.
+
+#### s
+
+TODO
+
+### q
+
+Continuing with the classes from the previous question, consider a mystery function that returns a object of the given class.  **You do not know the definition of the mystery function, other than it compiles properly and returns an object of the class.** For each of the following method calls marked below, indicate the value of the output, if the output cannot be determined, or if there is an error.
+
+```java
+
+A a = mysteryA(); //<-- mystery function, this line compiles (the below may not!)
+System.out.println(a.foo()); //<-- Mark A.1
+System.out.println(a.bar()); //<-- Mark A.2
+System.out.println(a.baz()); //<-- Mark A.3
+
+
+B b = mysteryB(); //<-- mystery function, this line compiles (the below may not!)
+System.out.println(b.foo()); //<-- Mark B.1
+System.out.println(b.bar()); //<-- Mark B.2
+System.out.println(b.baz()); //<-- Mark B.3
+
+D d = mysteryD(); //<-- mystery function, this line compiles (the below may not!)
+System.out.println(d.foo()); //<-- Mark D.1
+System.out.println(d.bar()); //<-- Mark D.2
+System.out.println(d.baz()); //<-- Mark D.3
+```
+
+#### s
+
+```
+A.1 : Compiles, Output not deterministic
+A.2 : Compiles, Output not deterministic
+A.3 : Doesn't Compile, No output
+
+B.1 : Compiles, Output is 41
+B.2 : Compiles, Output is 49
+B.3 : Compiles, Output is y
+
+D.1 : Compiles, Output is 42
+D.2 : Compiles, Output is 7
+D.3 : Doesn't Compile, No output
+```
+
+### q
+
+What is the difference between a `class` and an `abstract class`?
+
+#### s
+
+An `abstract class` can only be inherited by another class and can not be directly instantiated. A `class` can be instantiated in most contexts, and still inherited by other classes as well. `abstract class`es must also be implemented before code will compile.
+
+
+### q
+
+If you were to create an abstract class for a `Car` -- what features could be defined in the implemented class vs. what could be defined in the abstract class? Provide justifications for your design.
+
+#### s
+
+Features such as car brand, model, year, and other attributes that would be highly variable would be defined in the class implmentation. Other functions that would be mostly fixed and more deterministic across different class definitions, such as `toString` and functions that get or set values would be defined in the `abstact` class.
 
 # Grading rubric and submission
 
-Use git, as discussed in Lab 0, to submit your work in a repo called `gitusername-worksheetJ3`. You will be graded on the following:
+Use git, as discussed in Lab 0, to submit your work in a repo called `gitusername-worksheetJ2`. You will be graded on the following:
 
 |Item | Points |
-|the name of the repo for this lab matches the pattern  `gitusername-worksheetJ3` | 10 |
+|the name of the repo for this lab matches the pattern  `gitusername-worksheetJ2` | 10 |
 |the grader has been added as a collaborator to the repo with an invite timestamp during the lecture| 10 |
 |the repo has been made private | 10 |
-|the name of the answers file in your repo is  `worksheet-J3.md` | 10 |
+|the name of the answers file in your repo is  `worksheet-J2.md` | 10 |
 |worksheet questions have been completed | 60 |
 |TOTAL | 100 |
