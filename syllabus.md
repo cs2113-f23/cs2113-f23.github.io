@@ -21,11 +21,24 @@ aside:
 ### Meeting Time and Course Staff
 
 * Lecture: PHIL B156
-  * Mon. 8AM - 10:30AM 
+  * Mon. 8AM - 10:30AM with Adnan Shaker, Sidra Hussain, and Dr. Kinga (professor)
 * Lab
-  * Mon. 2:10PM - 3:20PM (SEH 4040, section 30)
-  * Wed. 3:35PM - 4:40PM (TOMP 405, section 31)
-  * Wed. 3:35PM - 4:40PM (SEH 4040, section 32)
+  * Mon. 2:10PM - 3:20PM (SEH 4040, section 30) with Owen Wolff, Chloe Truong, and Jett Jacobs (lead)
+  * Wed. 3:35PM - 4:40PM (TOMP 405, section 31) with Adnan Shaker, Matias Liu Schmid, and Jett Jacobs (lead)
+  * Wed. 3:35PM - 4:40PM (SEH 4040, section 32) with Lauren Schmidt, Rhys Chambers, and Sidra Hussian (lead)
+
+### Office hours
+* Owen Wolff (LA): Monday 12-1:30pm in TBA, Wednesday 12:45-2pm in TBA
+* Chloe Truong (LA): Monday 5-7pm in TBA
+* Adnan Shaker (LA): Saturday 10am-12:30pm in TBA
+* Matias Liu Schmid (LA): TBA
+* Lauren Schmidt (LA): Wednesday 6-7pm in TBA, Friday 10am-12pm in TBA
+* Rhys Chambers (LA): Wednesday 2-3pm and 4:30-6pm in TBA, Thursday 2-3pm in TBA
+* Sidra Hussian (UTA): Monday 4-5pm in TBA, Tuesday 9-10pm in TBA, Thursday 10:30am-12:30pm in TBA, and [by appointment](https://calendly.com/sidramhussain/csci-2113-uta-office-hours-by-appointment )
+* Kinga Dobolyi (professor): SEH 4655 Tuesdays from 12:45pm-2:00pm (you can show up at anytime, no appointment needed), [Zoom](https://gwu-edu.zoom.us/j/6378326351) on Wednesdays from 8:45am-10am, or email me for an appointment (between the hours of 9am through 4pm Monday through Thursday, schedule permitting, 15 minute appointment blocks).
+
+### Grading
+* Jett Jacobs (GTA and grading): jett@gwu.edu (no office hours)
 
 ## Course Details 
 
