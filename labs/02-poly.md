@@ -145,11 +145,11 @@ To run your unit tests -- remember, you need to have the junit jar file in the s
 
 ### Windows
 `javac -classpath ".;junit-platform-console-standalone-1.7.0-M1.jar" *.java`
-`java -classpath ".;junit-platform-console-standalone-1.7.0-M1.jar" org.junit.runner.JUnitCore Lab1_Tester`
+`java -classpath ".;junit-platform-console-standalone-1.7.0-M1.jar" org.junit.runner.JUnitCore Lab2_Tester`
 
 ### Mac/Linux
 `javac -classpath ".:junit-platform-console-standalone-1.7.0-M1.jar" *.java`
-`java -classpath ".:junit-platform-console-standalone-1.7.0-M1.jar" org.junit.runner.JUnitCore Lab1_Tester`
+`java -classpath ".:junit-platform-console-standalone-1.7.0-M1.jar" org.junit.runner.JUnitCore Lab2_Tester`
 
 Use git, as discussed in lab zero, to submit your work in a repo called `gitusername-lab2`. You will be graded on the following:
 
