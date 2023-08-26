@@ -14,7 +14,7 @@ Create a new repo using all the steps in Lab 0 called `yourgitusername-worksheet
 
 Download the [UnitTestExample.java](https://cs2113-s23.github.io/labs/UnitTestExample.java)
 
-Download the [junit jar file](https://search.maven.org/artifact/org.junit.platform/junit-platform-console-standalone/1.7.0-M1/jar) by clicking the `Downloads` button at the top right of that website and selecting `jar`. Save it in the same directory as your java file. This will allow you to run Junit tests through your terminal; there are also plugins for junit for text editors like VSCode if you want to google how to set that up.
+Download the Junit jar file from the pinned post on Ed. Save it in the same directory as your java file (preserving the name `junit-platform-console-standalone-1.7.0-M1.jar`). This will allow you to run Junit tests through your terminal; there are also plugins for junit for text editors like VSCode if you want to google how to set that up.
 
 Download the [CS1111_checks.xml](https://www2.seas.gwu.edu/~kinga/CS1111_S22/labs/CS1111_checks.xml) into the same directory.
 
