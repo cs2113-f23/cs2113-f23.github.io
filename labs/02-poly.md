@@ -13,6 +13,8 @@ Download the [DotChaser.java](./DotChaser.java) file.
 
 Download the [Plotter.jar](./Plotter.jar) file.
 
+Download the [Lab2_Tester.java](./Lab2_Tester.java) file.
+
 
 ### Github setup
 
