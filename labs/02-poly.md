@@ -96,12 +96,13 @@ Rewrite `DotChaser` as an object-oriented program. You will (presumably) be crea
 
 You must do these things:
 
+* **Refactor the code** only: do not change variable names or method names; reuse the existing fields and methods.
 * **Remove static methods**: only `main()` should be static in all of your classes.
 * **Polymorphism**: You should have `TypeA` and `TypeB` classes; observe how they differ. Your parent class `Thing` most likely will not need a single if statement. If you find you need one/more, make sure there isn't a way to utilize polymorphism instead. If you still find the need for if statements, ask your instructor if they are appropriate. Related to this, your child classes should have at least one method which demonstrates polymorphism. This should naturally come from your design, but we make note of it here as a requirement to give you that extra nudge.
 * **Use a linked list**: Remove `Node` from `main()` and put it inside a proper `List` or `Queue` class called `ThingList`. You'll have to write this. Your `main()` should not have `Node` variables anymore, but instead a `ThingList` variable with nice calls such as `list.add(thing)`.
 * **README.md**: In the  README file and write a paragraph (or two) that explains how your redesign makes use of encapsulation, information hiding, inheritance and polymorphism.
 
-Be sure to add all your new Java files to the repo for submission
+Be sure to add all your new Java files to the repo for submission.
 </div>
 
 # Part 2: Add a new thing (15 pts)
@@ -142,17 +143,17 @@ Use git, as discussed in lab zero, to submit your work in a repo called `gituser
 |the name of the repo for this lab matches the pattern  `gitusername-lab2` | 3 |
 |the grader has been added as a collaborator to the repo with an invite timestamp during the lab| 4 |
 |the repo has been made private | 3 |
-|[unit test] `TypeA` and `TypeB` are child classes of `Thing` | 5 |
-|[unit test] `Thing` does not use if-statements nor the `instanceof` operator | 5 |
-|[unit test] no static methods besides `main` in any of your classes | 5 |
-|[unit test] the `Thing` class is responsible for movement, utilizing good OOP | 5 |
-|the `Thing` class contains the appropriate fields, utilizing good OOP | 5 |
-|[unit test] the `Thing` class uses abstraction appropriately in all places, utilizing good OOP | 5 |
-|the `TypeA` and `TypeB` classes turn appropriately, utilizing good OOP | 5 | 
-|the `TypeA` and `TypeB` contain the minimum number of fields necessary, utilizing good OOP | 5 | 
-|the `TypeA` and `TypeB` contain the minimum number of methods necessary, utilizing good OOP | 5 | 
-|[unit test] the `ThingList` class contains the `Node` class as an inner class, utilizing good OOP | 5 |
-|[unit test] the `ThingList` class has methods to `addAll`, `moveAll`, and `printAll` `Thing`s inside the list/queue | 5 |
+|[**unit test**] `TypeA` and `TypeB` are child classes of `Thing` | 5 |
+|[**unit test**] `Thing` does not use if-statements nor the `instanceof` operator | 5 |
+|[**unit test**] no static methods besides `main` in any of your classes | 5 |
+|[**unit test**] the `Thing` class is responsible for movement, utilizing good OOP | 5 |
+|[**unit test**] the `Thing` class contains the appropriate fields, utilizing good OOP | 5 |
+|[**unit test**] the `Thing` class uses abstraction appropriately in all places, utilizing good OOP | 5 |
+|`TypeA` and `TypeB` classes turn appropriately, utilizing good OOP | 5 | 
+|[**unit test**] the `TypeA` and `TypeB` contain the minimum number of fields necessary (declare each on a new line), utilizing good OOP | 5 | 
+|[**unit test**]`TypeA` and `TypeB` contain the minimum number of methods necessary, utilizing good OOP | 5 | 
+|[**unit test**] the `ThingList` class contains the `Node` class as an inner class, utilizing good OOP | 5 |
+|[**unit test**] the `ThingList` class has methods to `addAll`, `moveAll`, and `printAll` `Thing`s inside the list/queue | 5 |
 |the `TypeC` class meets the specifications above | 15 |
 |a README file as specified above is included | 5 |
 |a UML diagram matching the code implementation as been included, that lists all classes and their methods and fields | 10 |
