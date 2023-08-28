@@ -158,3 +158,7 @@ Make sure that when you refresh the browser, you can see your changes there.
 |there is a second commit where `HelloWorld.java` has been correctly modified to include the student's name/username | 20 |
 |the second commit has a unique, useful message | 10 |
 | TOTAL | 100 |
+
+# Reminder: Worksheet J0
+
+Now that you have git installed on your laptop, **remember to create the repo for the worksheet from Monday's lecture, and submit it**!
