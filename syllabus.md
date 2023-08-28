@@ -21,14 +21,14 @@ aside:
 ### Meeting Time and Course Staff
 
 * Lecture: PHIL B156
-  * Mon. 8AM - 10:30AM with Adnan Shaker, Sidra Hussain, and Dr. Kinga (professor)
+  * Mon. 8AM - 10:30AM with Owen Wolff, Adnan Shaker, Sidra Hussain, and Dr. Kinga (professor)
 * Lab
   * Mon. 2:10PM - 3:20PM (SEH 4040, section 30) with Owen Wolff, Chloe Truong, and Jett Jacobs (lead)
   * Wed. 3:35PM - 4:40PM (TOMP 405, section 31) with Adnan Shaker, Matias Liu Schmid, and Jett Jacobs (lead)
   * Wed. 3:35PM - 4:40PM (SEH 4040, section 32) with Lauren Schmidt, Rhys Chambers, and Sidra Hussian (lead)
 
 ### Office hours
-* Owen Wolff (LA): Monday 12-1:30pm in TBA, Wednesday 12:45-2pm in TBA
+* Owen Wolff (LA): Wednesday 12:45-2pm in TBA
 * Chloe Truong (LA): Monday 5-7pm in TBA
 * Adnan Shaker (LA): Saturday 10am-12:30pm in TBA
 * Matias Liu Schmid (LA): TBA
