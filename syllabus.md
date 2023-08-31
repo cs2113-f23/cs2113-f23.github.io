@@ -31,7 +31,7 @@ aside:
 * Owen Wolff (LA): Wednesday 12:45-2pm in SEH 4040
 * Chloe Truong (LA): Monday 5-7pm in TBA
 * Adnan Shaker (LA): Saturday 10am-12:30pm in SEH 4040
-* Matias Liu Schmid (LA): TBA
+* Matias Liu Schmid (LA): Monday 2-4pm in TBA and Wednesday 11am-12pm in TBA
 * Lauren Schmidt (LA): Wednesday 6-7pm in TBA, Friday 10am-12pm in TBA
 * Rhys Chambers (LA): Wednesday 2-3pm and 4:30-6pm in TBA, Thursday 2-3pm in TBA
 * Sidra Hussian (UTA): Monday 4-5pm in TBA, Tuesday 9-10pm in SEH 4040, Thursday 10:30am-12:30pm in SEH 4040, and [by appointment](https://calendly.com/sidramhussain/csci-2113-uta-office-hours-by-appointment )
