@@ -129,9 +129,9 @@ Even though `HelloWorld.java` is in your folder, it is not a part of your repo u
 ### Commiting your changes
 
 Next, we need to tell git that we're ready to commit to these changes. You can ask it to commit all recent changes with the following command, which also requires a human-readable message:
-`git commit -a -m "my first attempt"`
+`git commit -m "my first attempt"`
 
-The `-a` flag is telling git to grab all the updated files, and the `-m` flag stands for the required message between quotes.
+The `-m` flag stands for the required message between quotes.
 
 ### Pushing your changes
 
