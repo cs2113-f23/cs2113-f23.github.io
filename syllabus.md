@@ -29,7 +29,7 @@ aside:
 
 ### Office hours
 * Owen Wolff (LA): Wednesday 12:45-2pm in SEH 4040
-* Chloe Truong (LA): Monday 5-7pm in TBA
+* Chloe Truong (LA): Monday 5-7pm in SEH 4th floor couches
 * Adnan Shaker (LA): Saturday 10am-12:30pm in SEH 4040
 * Matias Liu Schmid (LA): Monday 2:30-4:30pm and Wednesday 11am-12pm in SEH 4th floor couches
 * Lauren Schmidt (LA): Wednesday 5-7pm in SEH 4040, Friday 10am-12pm in SEH 4th floor couches
