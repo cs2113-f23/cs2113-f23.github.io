@@ -120,13 +120,13 @@ public class Creature {
     }
 
     
-    //TODO: Methods you may want complete here or in a child class, depending on your design
-    public void step(){} 
-    public void takeAction(){}
+    //TODO: add the methods below to the appropriate class(es)
+    //  void step()
+    //  void takeAction()
 
 
     
-    //To String so you can output a creature to the plotter
+    //To string so you can output a creature to the plotter
     public String toString() {
         //output in (x,y) format
         return ""+this.point.x+" "+this.point.y+" "+lab;
