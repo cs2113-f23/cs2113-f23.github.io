@@ -28,7 +28,7 @@ aside:
   * Wed. 3:35PM - 4:40PM (SEH 4040, section 32) with Lauren Schmidt, Rhys Chambers, and Sidra Hussian (lead)
 
 ### Office hours
-* Owen Wolff (LA): Wednesday 12:45-2pm in SEH 4040
+* Owen Wolff (LA): Wednesday 1-2pm in SEH 4040 and Tuesday 6:15-7:45pm in SEH 4th floor couches
 * Chloe Truong (LA): Monday 5-7pm in SEH 4th floor couches
 * Adnan Shaker (LA): Saturday 10am-12:30pm in SEH 4040
 * Matias Liu Schmid (LA): Monday 2:30-4:30pm and Wednesday 11am-12pm in SEH 4th floor couches
