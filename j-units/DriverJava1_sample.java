@@ -1,4 +1,4 @@
-public class DriverJava{
+public class DriverJava1_sample{
 
 	static String[] tests = {
 
