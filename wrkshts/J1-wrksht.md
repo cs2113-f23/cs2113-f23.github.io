@@ -8,11 +8,10 @@ showsolution: false
 
 Worksheets are self-guided activities that reinforce lectures. They are not graded for accuracy, only for completion. Worksheets are due by Sunday night before the next lecture.
 
-## Note
+Create a new repo using all the steps in Lab 0 called `yourgitusername-worksheet-J1`. Then, add the following file to it:
 
-Attempt to answer these questions before running the code. This will improve your ability to analyize and reason about code without an IDE or compiler. This skill we be helpful on the exams.
+Please submit your answers to the questions as comments in the java file you'll be writing in this lab.
 
-This worksheet combines topics from the Software Testing lecture as well as today's lecture.
 
 ## Questions
 
@@ -119,7 +118,7 @@ Mutation testing is automated, in the sense that it solves the *oracle problem*:
 
 Convert your `DriverJava1_sample.java` file from the previous lecture into a Junit test file with the following elements:
 
-* a single unit test for every input class (give it the name of that input partition)
+* a single unit test for every input class (give it the name of that input partition) -- if you have more than 20 tests, you can skip the rest.
 
 Assume that the method under test is called `checkCode` that takes a string as an argument and returns a boolean value whether or not the input was a valid code.
 
