@@ -8,9 +8,9 @@ showsolution: false
 
 Worksheets are self-guided activities that reinforce lectures. They are not graded for accuracy, only for completion. Worksheets are due by Sunday night before the next lecture.
 
-Create a new repo using all the steps in Lab 0 called `yourgitusername-worksheet-J1`. Then, add the following file to it:
+Create a new repo using all the steps in Lab 0 called `yourgitusername-worksheet-J1`. 
 
-Please submit your answers to the questions as comments in the java file you'll be writing in this lab.
+Please submit your answers to the questions as comments in the java file you'll be writing in this lab, which you should add to your repo.
 
 
 ## Questions

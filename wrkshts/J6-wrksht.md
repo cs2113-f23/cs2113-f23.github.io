@@ -8,6 +8,8 @@ showsolution: false
 
 Worksheets are self-guided activities that reinforce lectures. They are not graded for accuracy, only for completion. Worksheets are due by Sunday night before the next lecture.
 
+Submit a file called `worksheet-J6.md` in your repo for this assignment. Submit a file called `worksheet-J6.md` in your repo for this assignment.
+
 ## Note
 
 Attempt to answer these questions before running the code. This will improve your ability to analyize and reason about code without an IDE or compiler. This skill we be helpful on the exams.
