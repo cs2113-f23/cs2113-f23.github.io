@@ -122,7 +122,7 @@ Convert your `DriverJava1_sample.java` file from the previous lecture into a Jun
 
 Assume that the method under test is called `checkCode` that takes a string as an argument and returns a boolean value whether or not the input was a valid code.
 
-This is how we will also record that you attempted the in-class example from lecture.
+This is how we will also record that you attempted the in-class example from lecture. Your code doesn't need to compile.
 
 #### s
 
