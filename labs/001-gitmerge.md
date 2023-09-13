@@ -38,9 +38,9 @@ The goal of this lab is to get you more comfortable with using more advanced fea
 
 13. **Take a screenshot of the merge conflict you receive**
 
-You can take a picture of terminal, which indicates that there is a merge conflict
-You can take a picture of the `HelloWorld.java` file, which contains markings to indicate that there is a merge conflict
-You can take a picture of both
+> You can take a picture of terminal, which indicates that there is a merge conflict
+> You can take a picture of the `HelloWorld.java` file, which contains markings to indicate that there is a merge conflict
+> You can take a picture of both
 
 14. **Resolve the merge conflict**
 
