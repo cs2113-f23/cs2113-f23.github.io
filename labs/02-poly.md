@@ -155,7 +155,7 @@ Use git, as discussed in lab zero, to submit your work in a repo called `gituser
 
 |Item | Points |
 |the name of the repo for this lab matches the pattern  `gitusername-lab2` | 3 |
-|the grader has been added as a collaborator to the repo with an invite timestamp during the lab| 4 |
+|the grader has been added as a collaborator to the repo| 4 |
 |the repo has been made private | 3 |
 |[**unit test**] `TypeA` and `TypeB` are child classes of `Thing` | 5 |
 |[**unit test**] `Thing` does not use if-statements nor the `instanceof` operator | 5 |

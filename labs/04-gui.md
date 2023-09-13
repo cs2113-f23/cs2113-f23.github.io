@@ -124,7 +124,7 @@ Use git, as discussed in lab zero, to submit your work in a repo called `gituser
 
 |Item | Points |
 |the name of the repo for this lab matches the pattern  `gitusername-lab4` | 3 |
-|the grader has been added as a collaborator to the repo with an invite timestamp during the lab| 4 |
+|the grader has been added as a collaborator to the repo | 4 |
 |the repo has been made private | 3 |
 |three `JComboBox`s are used to select the roto numbers | 10 |
 |a `JTextField ` is used to input the three starting characters | 10 |

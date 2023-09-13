@@ -283,7 +283,7 @@ Use git, as discussed in lab zero, to submit your work in a repo called `gituser
 
 |Item | Points |
 |the name of the repo for this lab matches the pattern  `gitusername-project1` | 3 |
-|the grader has been added as a collaborator to the repo with an invite timestamp during the lecture| 4 |
+|the grader has been added as a collaborator to the repo| 4 |
 |the repo has been made private | 3 |
 |you met with a TA to go over your UML diagram | 7 |
 |UML diagram submitted that matches your code, using good OOP design | 10 |

@@ -246,7 +246,7 @@ Use git, as discussed in lab zero, to submit your work in a repo called `gituser
 
 |Item | Points |
 |The name of the repo for this lab matches the pattern  `gitusername-project2` | 3 |
-|The grader has been added as a collaborator to the repo with an invite timestamp during the lab noted on the schedule| 4 |
+|The grader has been added as a collaborator to the repo| 4 |
 |The repo has been made private | 3 |
 |There is a single button to connect/disconnect, who's label toggles when the button is pressed | 8 |
 |Three labelled fields except a name, host, and port | 8 |
