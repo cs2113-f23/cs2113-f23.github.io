@@ -44,6 +44,14 @@ The goal of this lab is to get you more comfortable with using more advanced fea
 
 16. `push` the screenshot of the merge conflict to Github
 
+# Troubleshooting
+
+**Problem**: git is asking me do set something called *upstream*?
+> The first time you push to a branch, git may ask you to set the *upstream* to a specific remote server; you can just follow the instructions it prints to the terminal to set the upstream to the correct remote branch.
+
+**Problem**: I forgot to push to master before making a new branch!
+> It happens! Just make *another* branch, and push to it. You should end up, eventually, with two branches; that's all that matters for this lab.
+
 # Grading Rubric
 
 |Item | Points |
