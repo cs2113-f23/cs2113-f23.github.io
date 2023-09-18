@@ -34,7 +34,7 @@ aside:
 * Matias Liu Schmid (LA): Monday 2:30-4:30pm and Wednesday 11am-12pm in SEH 4th floor couches
 * Lauren Schmidt (LA): Wednesday 5-7pm in SEH 4040, Friday 10am-12pm in SEH 4th floor couches
 * Rhys Chambers (LA): Wednesday 2-3pm and 4:30-6pm in SEH 4th floor couches, Thursday 2-3pm in SEH 4th floor couches
-* Sidra Hussian (UTA): Monday 4-5pm in TBA, Tuesday 9-10pm in SEH 4040, Thursday 10:30am-12:30pm in SEH 4040, and [by appointment](https://calendly.com/sidramhussain/csci-2113-uta-office-hours-by-appointment )
+* Sidra Hussian (UTA): Monday 4-5pm in SEH 4th floor couches, Tuesday 3:30pm-4:40pm in SEH 4th floor couches, Thursday 10:30am-12:30pm in SEH 4040, and [by appointment](https://calendly.com/sidramhussain/csci-2113-uta-office-hours-by-appointment )
 * Kinga Dobolyi (professor): SEH 4655 Tuesdays from 12:45pm-2:00pm (you can show up at anytime, no appointment needed), [Zoom](https://gwu-edu.zoom.us/j/6378326351) on Wednesdays from 8:45am-10am, or email me for an appointment (between the hours of 9am through 4pm Monday through Thursday, schedule permitting, 15 minute appointment blocks).
 
 ### Grading
