@@ -13,7 +13,7 @@ permalink: /j/1
 
 ## Public Interface of a Class
 
-In the last class, we reviewed how Java works and spent some time defining a `Point` class and a `Line` class, built using `Points`. A key idea we covered was **encapsulation** that the data and methods of the class should be controlled within the class such that there are no unintended side-effects from the programmer. 
+In the last class, we reviewed how Java works and spent some time defining a `Point` class and a `Line` class, built using `Point`s. A key idea we covered was **encapsulation** that the data and methods of the class should be controlled within the class such that there are no unintended side-effects from the programmer. 
 
 Another way to view this construction is via *information hiding* and creating a **public interface**. That is, we encapsulated data and methods such that the programmer only need to know the public interface to the class in order to use it, the rest is hidden. 
 
@@ -42,7 +42,7 @@ public class Point {
 }
 ```
 
-Let's also assume we have a `Triangle` class with some hand static methods for calculating the area of a triangle and perimeter of the triangle defined by using the `Point`. Again, we know the public interface, but not how it's implemented.
+Let's also assume we have a `Triangle` class with some handy static methods for calculating the area of a triangle and perimeter of the triangle defined by using the `Point`. Again, we know the public interface, but not how it's implemented.
 
 ```java
 public Triangle {
