@@ -10,7 +10,7 @@ Worksheets are self-guided activities that reinforce lectures. They are not grad
 
 Create a new repo using all the steps in Lab 0 called `yourgitusername-worksheet-J2`. Then, add the following file to it:
 
-You may submit a single file in any format; Java (with comments), text, and/or markdown (an `.md` file). It can be called anything (reasonable).
+You may submit a single file in any format; Java (with comments), text, and/or markdown (an `.md` file). It can be called anything (reasonable). For the screenshot required in the last question, you can submit it as an additional file with any common extension and reasonable name.
 
 ## Note
 
