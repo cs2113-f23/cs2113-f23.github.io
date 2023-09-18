@@ -387,7 +387,7 @@ public class Racecar {
 }
 ```
 
-Suppose we want to extend this to a `FormulaOne` class which has a make, e.g., Mercedes, complete the constructor and `toString()` method that would make this functional?
+Suppose we want to extend this to a `FormulaOne` class which has a make, e.g., Mercedes. Complete the constructor and `toString()` method.
 
 ```java
 

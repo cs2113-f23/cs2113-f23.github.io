@@ -301,7 +301,7 @@ Java provides a `super` which allows us to refer to the super-class and, in this
 
 public class LabPoint extends Point {
     private String label;
-    public LabPoint(double X, double Y, String lab) {
+    public LabPoint(double x, double y, String lab) {
         super(x, y); //initilize the Point part, sets x and y
         this.label = lab; //initialize LabPoint part
     }
@@ -584,7 +584,7 @@ public class CountingQueue extends Queue {
         super();
         count = 0;
     }    
-    public voids enqueue(String s) {
+    public void enqueue(String s) {
          count++;
          return  super.enqueue(s);
     }
