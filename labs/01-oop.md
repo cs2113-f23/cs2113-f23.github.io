@@ -62,6 +62,7 @@ For example, your rotor should be able to do the following
 2.    Rotate one click clockwise. This should involve changing the `String`.
 3.    Return the index in the `String` at which a given character appears.
 4.    Return the character at a given index. 
+5.    The `rotate` method should return `true` when the rotor's current character matches its starting character, `false` otherwise.
 
 An example of a rotor `String` is `#GNUAHOVBIPWCJQXDKRYELSZFMT` ... which you are to interpret circularly, so that the last character loops around to the first. If you imagine that the first positition indicates the top spot on the rotor, then:
 
