@@ -410,7 +410,7 @@ Enter amount of miles: 302
  $0679.82  total
  ```
 
-<font color=red><h3>Let's take 10-15 minutes to go through questions 1-5 on the J2 worksheet.</h3></font>
+<font color=red><h3>Let's take 10-15 minutes to go through questions 1-5 on the J3 worksheet.</h3></font>
 
 # Casting, Polymorphism and `instanceof`
 
@@ -651,7 +651,7 @@ public class GWFaculty extends GWPerson {
 ```
 
 
-<font color=red><h3>Let's take 10 minutes to go through questions 6-7 on the J2 worksheet.</h3></font>
+<font color=red><h3>Let's take 10 minutes to go through questions 6-7 on the J3 worksheet.</h3></font>
 
 ## Leveraging Abstract Class
 
@@ -741,7 +741,7 @@ Styles, Harry (G120345,styles) -- Class of 2026 -- styles@gwmail.gwu.edu
 
 ```
 
-<font color=red><h3>Let's take 10 minutes to go through questions 8-10 on the J2 worksheet.</h3></font>
+<font color=red><h3>Let's take 10 minutes to go through questions 8-10 on the J3 worksheet.</h3></font>
 
 # OOP Design Activity
 
@@ -819,7 +819,7 @@ And once all that is loaded in, the simulation runs indicating income and expens
 Take a moment to think of a class hierarchy structure that would make sense for this simulator. You can either draw a UML diagram, or write out your classes members and methods (withou implementation). I do the latter below, and click <a href="javascript:void(0)" onclick="$('.exercise').toggle('slow')">REVEAL</a> to see my solution. 
 
 
-<font color=red><h3>Let's finish questions 11-14 on the J2 worksheet.</h3></font>
+<font color=red><h3>Let's finish questions 11-14 on the J3 worksheet.</h3></font>
 
 <div class="exercise" style="display:none">
 ```java
