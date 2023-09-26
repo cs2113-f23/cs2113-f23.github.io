@@ -451,3 +451,9 @@ Additionally, come up with one additional type for this company, describe it and
 
 Include your UML diagram and explanation with this worksheet (in the file you're submitting, or as a screenshot/photo/etc).
 
+#### s
+
+The intern should have Employee as its parent class, with an additional `Date` field called `employmentExpiration`.
+
+Additional type left as an exercise to the reader.
+
