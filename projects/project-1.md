@@ -29,7 +29,7 @@ Use git, as discussed in Lab 0, to create a repo called `gitusername-project1`, 
 
 ---
 
-## Mice, Cat, ZombieCat Simulation
+## Mice and Cat Simulation
 
 
 In this project, you will complete a point simulation of a city of mice and cats! Cats chase mice, and when they catch a mouse, they eat it. If a cat doesn't eat enough, it passes away (as do mice after a certain amount of time). These creatures live inside a city, where they roam around a two dimensional grid.
