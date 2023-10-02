@@ -101,7 +101,7 @@ You must do these things:
 * **Refactor the code** only: do not change variable names or method names; reuse the existing fields and methods.
 * **Remove static methods**: only `main()` should be static in all of your classes.
 * **Polymorphism**: You should have `TypeA` and `TypeB` classes; observe how they differ. Your parent class `Thing` most likely will not need a single if statement. If you find you need one/more, make sure there isn't a way to utilize polymorphism instead. If you still find the need for if statements, ask your instructor if they are appropriate. Related to this, your child classes should have at least one method which demonstrates polymorphism. This should naturally come from your design, but we make note of it here as a requirement to give you that extra nudge.
-* **Use a linked list**: Remove `Node` from `main()` and put it inside a proper `List` or `Queue` class called `ThingList`. You'll have to write this. Your `main()` should not have `Node` variables anymore, but instead a `ThingList` variable with nice calls such as `list.add(thing)`.
+* **Use a linked list**: Remove `Node` from `main()` and write a `List` or `Queue` class called `ThingList`. You'll have to write this. Your `main()` should not have `Node` variables anymore, but instead a `ThingList` variable with nice calls such as `list.add(thing)`.
 * **README.md**: In the  README file and write a paragraph (or two) that explains how your redesign makes use of encapsulation, information hiding, inheritance and polymorphism.
 
 Be sure to add all your new Java files to the repo for submission.
