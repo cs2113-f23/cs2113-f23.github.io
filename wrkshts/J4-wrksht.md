@@ -667,14 +667,3 @@ public class Car implements Comparable<Car> {
 	}
 ```
 
-# Grading rubric and submission
-
-Use git, as discussed in Lab 0, to submit your work in a repo called `gitusername-worksheetJ3`. You will be graded on the following:
-
-|Item | Points |
-|the name of the repo for this lab matches the pattern  `gitusername-worksheetJ3` | 10 |
-|the grader has been added as a collaborator to the repo with an invite timestamp during the lecture| 10 |
-|the repo has been made private | 10 |
-|the name of the answers file in your repo is  `worksheet-J3.md` | 10 |
-|worksheet questions have been completed | 60 |
-|TOTAL | 100 |

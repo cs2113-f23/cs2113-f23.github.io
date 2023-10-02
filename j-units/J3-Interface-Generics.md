@@ -598,8 +598,6 @@ while(iter.hasNext()) { //Iterator interface
 }
 ```
 
-<font color="red"><b>PAUSE: Let's do exercises 12-16 on the J4 worksheet now for the next 20 minutes.<br></b></font>
-
 ## Java Collections
 
 The last interface we'll discuss here is the Java `Collection` interface, which is actually a family of interfaces that describe any data structure that stores a collection of objects. And of course, all `Collection`s implement `Iterable` :) 
@@ -636,7 +634,7 @@ The key classes that you will encounter that realize a `Map` are:
 * `LinkedHashMap<K,V>` : A hash table that useses a linked list to enable iteration of the hash table. 
 * `TreeMap<K,V>` : A (balanced) tree based implementation of `Map` that has the benefit of also being a `NavigableMap`, so it can be iterated in some order. 
 
-<font color="red"><b>PAUSE: Let's do exercise 17 on the J4 worksheet now.<br></b></font>
+<font color="red"><b>PAUSE: Let's do exercises 12-16 on the J4 worksheet now for the next 20 minutes.<br></b></font>
 
 
 
