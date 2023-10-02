@@ -317,7 +317,7 @@ public class TestHashMap {
 
     public static void main (String[] argv) {
         // Create a new hashmap.
-        Hashtable fabFour = new HashMap();
+        HashMap fabFour = new HashMap();
 
         // Insert four key and value pairs.
         fabFour.put("John", "John Lennon");
