@@ -135,7 +135,7 @@ Here's an example of a solution with an extra yellow thing doing spirals:
 
 Use Violet UML (or another tool) to generate a UML diagram for your many `Thing` types. 
 
-> Create a UML diagram. Include it in repo named 'UML.png' and link it into your README. If you do the extra credit below, be sure to include that `Thing` type in your UML diagram. 
+> Create a UML diagram. Include it in repo named 'UML.png' and link it into your README. 
 
 # Grading rubric and submission
 
