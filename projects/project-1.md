@@ -5,7 +5,7 @@ permalink: project/1
 
 *View the video for this project on [Youtube](https://youtu.be/s1Q4ioDXMu4)*
 
-# Project 2: It's a cat and mouse game...
+# Project 1: It's a cat and mouse game...
 
 This is a two part project. The first part of the project will require you to submit a UML diagram and descriptions of your OOP design to complete the project. The second part of the project is your full submission.
 
@@ -228,7 +228,7 @@ java -jar Plotter.jar 42 --DEBUG
 
 There are two requirements for this project. The first requirement (Part A) involves presenting a UML diagram for your project that describes the `Creature` object relationships as well as how you utilized OOP design. The second requirement (Part B) is to actually implement the code. 
 
-### Part A : UML Diagram and Planning Meeting (25 Points)
+### Part A : UML Diagram and Planning Meeting (10 Points)
 
 <div class=requirement>
 
@@ -243,7 +243,7 @@ In your meeting, be prepared for feedback that you should incorporate into your 
 </div>
 <br>
 
-### Part B: Implementation (75 Points)
+### Part B: Implementation (90 Points)
 
 <div class=requirement>
 
