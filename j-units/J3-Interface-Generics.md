@@ -95,7 +95,7 @@ margin-right: auto;"/>
 
 Here the solid line with solid arrowheads indicate classes that inerit from another, like `GWStudent` inherits from `GWPerson`. A dotted line with a solid arrowhead indicates a class that *realizes* an interface, like `GWFaculty` realizing `GWStaff`. Finally, an interface is annotaed with `<<>>` markers in its name. 
 
-<font color="red"><b>PAUSE: Let's do exercises 1-3 on the J3 worksheet now for the next ten minutes.<br></b></font>
+<font color="red"><b>PAUSE: Let's do exercises 1-3 on the J4 worksheet now for the next ten minutes.<br></b></font>
 
 ## Using interfaces
 
@@ -302,7 +302,7 @@ And if we tried to insert a non `String` to `l`, we would get a compiler error:
 l.addToHead(Integer(10)); //<-- this will cause a compiler error
 ```
 
-<font color="red"><b>PAUSE: Let's do exercise 4 on the J3 worksheet now for the next five minutes.<br></b></font>
+<font color="red"><b>PAUSE: Let's do exercise 4 on the J4 worksheet now for the next five minutes.<br></b></font>
 
 ## Generics as an Erasure to Object
 
@@ -432,7 +432,7 @@ While you can do some fancy casting with arrays of `Objects`, best practice is t
 
 <!-- Unfortunately, this may not work in all situations, for example, if you want to write a list that can be generic to any type, not just subtypes of one type.  -->
 
-<font color="red"><b>PAUSE: Let's do exercises 5-11 on the J3 worksheet now for the next 20 minutes.<br></b></font>
+<font color="red"><b>PAUSE: Let's do exercises 5-11 on the J4 worksheet now for the next 20 minutes.<br></b></font>
 
 # Exploring Common Java Interfaces and their Realizations
 
@@ -598,7 +598,7 @@ while(iter.hasNext()) { //Iterator interface
 }
 ```
 
-<font color="red"><b>PAUSE: Let's do exercises 12-16 on the J3 worksheet now for the next 20 minutes.<br></b></font>
+<font color="red"><b>PAUSE: Let's do exercises 12-16 on the J4 worksheet now for the next 20 minutes.<br></b></font>
 
 ## Java Collections
 
@@ -636,7 +636,7 @@ The key classes that you will encounter that realize a `Map` are:
 * `LinkedHashMap<K,V>` : A hash table that useses a linked list to enable iteration of the hash table. 
 * `TreeMap<K,V>` : A (balanced) tree based implementation of `Map` that has the benefit of also being a `NavigableMap`, so it can be iterated in some order. 
 
-<font color="red"><b>PAUSE: Let's do exercise 17 on the J3 worksheet now.<br></b></font>
+<font color="red"><b>PAUSE: Let's do exercise 17 on the J4 worksheet now.<br></b></font>
 
 
 
