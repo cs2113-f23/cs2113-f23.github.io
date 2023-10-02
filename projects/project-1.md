@@ -228,7 +228,7 @@ java -jar Plotter.jar 42 --DEBUG
 
 There are two requirements for this project. The first requirement (Part A) involves presenting a UML diagram for your project that describes the `Creature` object relationships as well as how you utilized OOP design. The second requirement (Part B) is to actually implement the code. 
 
-### Part A : UML Diagram and Planning Meeting (10 Points)
+### Part A : UML Diagram and Planning Meeting (17 Points)
 
 <div class=requirement>
 
@@ -243,7 +243,7 @@ In your meeting, be prepared for feedback that you should incorporate into your 
 </div>
 <br>
 
-### Part B: Implementation (90 Points)
+### Part B: Implementation (83 Points)
 
 <div class=requirement>
 
