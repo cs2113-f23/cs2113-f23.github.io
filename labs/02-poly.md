@@ -92,7 +92,13 @@ Note that the plotter can plot more than just red and blue. Here are your color 
 
 <div class="requirement">
 
-# Part 1: Rewrite `DotChaser` functionality into several classes using good OOP (65 pts)
+# Part 1: Create a UML diagram for your `Thing`s (10 pts)
+
+Use Violet UML (or another tool) to generate a UML diagram for your many `Thing` types after reading the explanations below.
+
+> Create a UML diagram. Include it in repo named 'UML.png' and link it into your README. 
+
+# Part 2: Rewrite `DotChaser` functionality into several classes using good OOP (65 pts)
 
 Rewrite `DotChaser` as an object-oriented program. You will (presumably) be creating other `.java` files as well. The **output of `DotChaser` should not change**, but the design must follow all the good object-oriented design principles we have discussed. In particular, you must use encapsulation, information hiding, inheritance, and polymorphism. Maximize code reuse; keep implementation and interface as separate as possible. Your inheritance should follow the picture on the right.
 
@@ -107,7 +113,7 @@ You must do these things:
 Be sure to add all your new Java files to the repo for submission.
 </div>
 
-# Part 2: Add a new thing (15 pts)
+# Part 3: Add a new `Thing` (15 pts)
 
 The original `DotChaser` had two types of Things: `typeA`, which randomly choses left, right or straight at every round; and `typeB`, which randomly chooses left, right or straight every 10th round. Now that you have a nice object-oriented version, create a third type of `Thing` called `TypeC`. What exactly it does is up to you, but it needs to use some diagonal motion (i.e. left-right-left-right-... sequences, or draws a circle, triangle, or other shape). The principal thing to keep in mind is how OOP makes this easier and cleaner. 
 
@@ -131,11 +137,6 @@ Here's an example of a solution with an extra yellow thing doing spirals:
 </center>
 </div>
 
-# Part 3: Create a UML diagram for your `Thing`s (10 pts)
-
-Use Violet UML (or another tool) to generate a UML diagram for your many `Thing` types. 
-
-> Create a UML diagram. Include it in repo named 'UML.png' and link it into your README. 
 
 # Grading rubric and submission
 
