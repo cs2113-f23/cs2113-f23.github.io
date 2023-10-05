@@ -41,10 +41,9 @@ public class City{
         this.creatures = new LinkedList<Creature>();
         this.creaturesToAdd = new LinkedList<Creature>();
         
-        /* Populate mice */
+        /* Populate mice and cats */
         for (int i=0; i<numMice; i++) addMouse();
         for (int i=0; i<numCats; i++) addCat();
-        for (int i=0; i<numZombieCats; i++) addZombieCat();
         addNewCreatures();
       
     }
@@ -64,9 +63,6 @@ public class City{
         creaturesToAdd.add(new Cat(rand.nextInt(HEIGHT),rand.nextInt(WIDTH),this,rand));
     }
     
-    public void addZombieCat(){
-        creaturesToAdd.add(new ZombieCat(rand.nextInt(HEIGHT),rand.nextInt(WIDTH),this,rand));
-    }
 
     //use this method to queue up a create to be added
     public void addNewCreatures(){
