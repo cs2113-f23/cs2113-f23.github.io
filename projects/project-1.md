@@ -226,6 +226,18 @@ java -jar Plotter.jar 42 --DEBUG
 
 > **DEBUGGING TIP**: If your simulator is printing output, but nothing shows in the window when you are running the plotter, check the format of the output of the simulator, and make sure it is only two numbers followed by a letter (separated by spaces).
 
+## Junit testing
+
+To run your unit tests -- remember, you need to have the junit jar file in the same directory -- compile and run your code with the following commands on the terminal (depending on your OS):
+
+### Windows
+`javac -classpath ".;junit-platform-console-standalone-1.7.0-M1.jar" *.java`
+`java -classpath ".;junit-platform-console-standalone-1.7.0-M1.jar" org.junit.runner.JUnitCore Project1_Tester`
+
+### Mac/Linux
+`javac -classpath ".:junit-platform-console-standalone-1.7.0-M1.jar" *.java`
+`java -classpath ".:junit-platform-console-standalone-1.7.0-M1.jar" org.junit.runner.JUnitCore Project11_Tester`
+
 ## Requirements
 
 There are two requirements for this project. The first requirement (Part A) involves presenting a UML diagram for your project that describes the `Creature` object relationships as well as how you utilized OOP design. The second requirement (Part B) is to actually implement the code. 
