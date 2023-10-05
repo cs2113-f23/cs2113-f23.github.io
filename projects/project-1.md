@@ -23,6 +23,8 @@ Download the [Simulator.java](./Simulator.java) file.
 
 Download the [Plotter.jar](./Plotter.jar) file.
 
+Download the [Plotter.jar](./Project1_Tester.java) file.
+
 ### Github setup
 
 Use git, as discussed in Lab 0, to create a repo called `gitusername-project1`, add these six files to it, and commit and push the changes to github. The timestamp of your invitation of the grader as a collaborator must be from this lecture session.
