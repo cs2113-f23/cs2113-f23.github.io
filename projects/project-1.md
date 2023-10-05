@@ -23,7 +23,7 @@ Download the [Simulator.java](./Simulator.java) file.
 
 Download the [Plotter.jar](./Plotter.jar) file.
 
-Download the [Plotter.jar](./Project1_Tester.java) file.
+Download the [Project1_Tester.java](./Project1_Tester.java) file.
 
 ### Github setup
 
