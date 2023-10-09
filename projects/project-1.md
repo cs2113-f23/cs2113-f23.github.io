@@ -266,6 +266,7 @@ Mice and cats should extend the `Creature` class.
 Additionally, in your simulator, have it such that:
 * Every 100 rounds, a mouse is added to a random location in the city
 * Every 25 rounds, a cat is added to a random location in the city
+**To pass the unit tests, random turning should be implemented by assigning the `nextInt(4)` from the creature's `Random` object (that is set in the constructor). Recall the entire simulation shares the same `Random` object across all creatures in the city**.
 
 Then, implement the following:
 
@@ -274,7 +275,7 @@ Then, implement the following:
 
 * After 20 rounds of simulation time, a mouse produces a new baby mouse at the same location 
 * A mouse dies after 22 rounds simulation time
-* A mouse randomly changes directions 20% of the time
+* A mouse randomly changes directions 20% of the time. **To pass the unit tests, have your code look for 1 or 2 as the next random integer out of 0-9 to take the turn. Turning should always happen before stepping**.
 * A mouse is displayed as a blue dot
 * The `Mouse` class must extend the `Creature` class using good OOP practices 
 
@@ -285,7 +286,7 @@ Then, implement the following:
 * A cat searches up to 20 grid points (as measured by the `GridPoint.distance()` method) for a mouse to chase. 
 * If the cat finds a mouse, it moves towards the mouse and is displayed using the color cyan. (This is to make it easier for you to debug, and for us to grade). If the cat cannot find a mouse, it moves normaly and is displayed in yellow.
 * Cats *jump* two spaces at a time. They do not traverse the grid point they jump over. That is, if they are on space (1,2) they would move to (1,4). 
-* Cats randomly turn, change direction, 5% of the time.
+* Cats randomly turn, change direction, 5% of the time. **To pass the unit tests, have your code look for 0-4 as the next random integer out of 0-99 to take the turn. Turning should always happen before stepping**.
 * Cats are displayed as a yellow dot.
 
 
