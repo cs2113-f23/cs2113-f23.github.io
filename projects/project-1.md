@@ -130,9 +130,9 @@ This class implements a row/column pair that can be used as a key in a map. You 
 Like in Lab 2, we will separate the simulation from visualization. 
 
 To compile all your files at once, use  
-```javac -classpath ".;./Plotter.jar" *.java``` for Windows 
+```javac -classpath ".;./Plotter.jar;./junit-platform-console-standalone-1.7.0-M1.jar" *.java``` for Windows 
 
-```javac -classpath ".:./Plotter.jar" *.java``` for Mac 
+```javac -classpath ".:./Plotter.jar:./junit-platform-console-standalone-1.7.0-M1.jar" *.java``` for Mac 
 
 ### Simulating
 
@@ -231,11 +231,11 @@ java -jar Plotter.jar 42 --DEBUG
 To run your unit tests -- remember, you need to have the junit jar file in the same directory -- compile and run your code with the following commands on the terminal (depending on your OS):
 
 ### Windows
-`javac -classpath ".;junit-platform-console-standalone-1.7.0-M1.jar" *.java`
+`javac -classpath ".;junit-platform-console-standalone-1.7.0-M1.jar;./Plotter.jar" *.java`
 `java -classpath ".;junit-platform-console-standalone-1.7.0-M1.jar" org.junit.runner.JUnitCore Project1_Tester`
 
 ### Mac/Linux
-`javac -classpath ".:junit-platform-console-standalone-1.7.0-M1.jar" *.java`
+`javac -classpath ".:junit-platform-console-standalone-1.7.0-M1.jar:./Plotter.jar" *.java`
 `java -classpath ".:junit-platform-console-standalone-1.7.0-M1.jar" org.junit.runner.JUnitCore Project11_Tester`
 
 ## Requirements
