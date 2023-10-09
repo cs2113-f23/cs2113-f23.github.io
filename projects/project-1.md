@@ -265,7 +265,7 @@ Mice and cats should extend the `Creature` class.
 
 Additionally, in your simulator, have it such that:
 * Every 100 rounds, a mouse is added to a random location in the city
-* Every 25 rounds, a cat is added to a random location in the city
+* Every 25 rounds, a cat is added to a random location in the city.
 **To pass the unit tests, random turning should be implemented by assigning the `nextInt(4)` from the creature's `Random` object (that is set in the constructor). Recall the entire simulation shares the same `Random` object across all creatures in the city**.
 
 Then, implement the following:
