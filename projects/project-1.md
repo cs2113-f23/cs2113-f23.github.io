@@ -283,7 +283,7 @@ Then, implement the following:
 
 * A cat eats a mouse if they end up on the same location. That is, the mouse should die and be removed from the simulation.
 * If a cat doesn't eat a mouse within 50 moves, the cat dies.
-* A cat searches up to 20 grid points (as measured by the `GridPoint.distance()` method) for a mouse to chase. **To pass the unit tests, it first checks if the cat needs to move NORTH/SOUTH (if the vertical distance is strictly greater than the horizontal distance); otherwise, it will move EAST/WEST**.
+* A cat searches up to 20 grid points (as measured by the `GridPoint.distance()` method) for a mouse to chase. **To pass the unit tests, it first checks if the cat needs to move NORTH/SOUTH (if the vertical distance is strictly greater than the horizontal distance); otherwise, it will move EAST/WEST. If the mouse is on the other side of the grid but is flagged as closest due to the grid wrapping, you should let your code go in the naive direction towards the mouse even if that makes it go further away from the target -- see test9 for an example here.**
 * If the cat finds a mouse, it moves towards the mouse and is displayed using the color cyan. (This is to make it easier for you to debug, and for us to grade). If the cat cannot find a mouse, it moves normaly and is displayed in yellow.
 * Cats *jump* two spaces at a time. They do not traverse the grid point they jump over. That is, if they are on space (1,2) they would move to (1,4). 
 * Cats randomly turn, change direction, 5% of the time. **To pass the unit tests, have your code look for 0-4 as the next random integer out of 0-99 to take the turn. Turning should always happen before stepping**.
