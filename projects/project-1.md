@@ -275,7 +275,7 @@ Then, implement the following:
 
 * After 20 rounds of simulation time, a mouse produces a new baby mouse at the same location 
 * A mouse dies after 22 rounds simulation time
-* A mouse randomly changes directions 20% of the time. **To pass the unit tests, have your code look for 1 or 2 as the next random integer out of 0-9 to take the turn. Turning should always happen before stepping**.
+* A mouse randomly changes directions 20% of the time. **To pass the unit tests, have your code look for 0 or 1 as the next random integer out of 0-9 to take the turn. Turning should always happen before stepping**.
 * A mouse is displayed as a blue dot
 * The `Mouse` class must extend the `Creature` class using good OOP practices 
 
