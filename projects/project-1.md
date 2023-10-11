@@ -236,7 +236,7 @@ To run your unit tests -- remember, you need to have the junit jar file in the s
 
 ### Mac/Linux
 `javac -classpath ".:junit-platform-console-standalone-1.7.0-M1.jar:./Plotter.jar" *.java`
-`java -classpath ".:junit-platform-console-standalone-1.7.0-M1.jar" org.junit.runner.JUnitCore Project11_Tester`
+`java -classpath ".:junit-platform-console-standalone-1.7.0-M1.jar" org.junit.runner.JUnitCore Project1_Tester`
 
 ## Requirements
 
