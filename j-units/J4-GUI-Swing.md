@@ -64,7 +64,7 @@ We can fix this and do something slightly more interesting, and there are severa
 
 
 ```java
-import javax.swing.*
+import javax.swing.*;
 
 public class Ex1Jframe {
     public static void main(String args[]) {
