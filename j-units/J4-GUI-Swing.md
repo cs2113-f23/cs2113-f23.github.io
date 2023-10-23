@@ -286,8 +286,6 @@ public class Ex5 {
 
 So, what do we take away from this? Java Swing's event handling mechanism is fundamentally about polymorphism and inheritance (or at least the limited form of inheritance offered by interfaces). In fact, it is a prime example of multiple implementations of the same interface, because every time we need to define how to react to an event (like a window closing) we provide a different implementation of the listener interface. 
 
-<br>
-<font color=red>PAUSE: Let's do problems 2 and 3 on the J4 worksheet now (5 minutes)</font>
 <br><br>
 
 ## Extending JFrames
@@ -347,8 +345,6 @@ public class Ex6 {
 }
 ```
 
-<br>
-<font color=red>PAUSE: Let's do problems 4 through 7 on the J4 worksheet now (10 minutes)</font>
 <br><br>
 
 # Fuller Feature GUIs
@@ -493,7 +489,7 @@ margin-right: auto;"/>
 (Quick aside about `JPanel`: The `JPanel` is the workhorse of the GUI's and you'll use it a lot. In fact, you can imagine, in a OOP way, extending a `JPanel` if there are functionality within that context you want to use, such as adding a number of components. We don't show that here, but now that you're developing your OOP skills, you should be able to imagine it.)
 
 <br>
-<font color=red>PAUSE: Let's do problem 8 on the J4 worksheet now (5 minutes)</font>
+<font color=red>PAUSE: Let's do problem 4 on the J5 worksheet now (5 minutes)</font>
 <br><br>
 
 ## Button Action Events
@@ -609,7 +605,7 @@ public class HelloGoodbyeEx2 {
 We still add an `ActionListener` for the button, but we do not give it a name. Instead we define the single method that needs to be realized *in-line* with the code. This creates a new class definition for us just for this context. This new class is called an *anonymous class* because it is an unnamed class.
 
 <br>
-<font color=red>PAUSE: Let's do problems 9 and 10 on the J4 worksheet now (10 minutes)</font>
+<font color=red>PAUSE: Let's do problems 5 and 6 on the J5 worksheet now (10 minutes)</font>
 <br><br>
 
 ## Lambda Expressions
@@ -677,7 +673,7 @@ There's a lot, lot, lot more to Lambda's in Java. They are very useful, but hope
 </div>
 
 <br>
-<font color=red>PAUSE: Let's do problems 11 and 12 on the J4 worksheet now (5 minutes)</font>
+<font color=red>PAUSE: Let's do problems 7 and 8 on the J5 worksheet now (5 minutes)</font>
 <br><br>
 
 ## Bigger Example: Converter GUI
@@ -787,7 +783,7 @@ The last (somewhat) new thing here is the fact that we use a private, inner clas
 What makes this particularly interesting (at least to me) is that we can use the same action listener for three different components. This is the beauty of OOP: they all rely on the same interface. When we apply the listener to a `JComboBox`, the event occurs when a new item is selected. When the listener is applied to a `JTextField` the event occurs when *enter* is hit. 
 
 <br>
-<font color=red>PAUSE: Let's do problems 13 through 16 on the J4 worksheet now (rest of class)</font>
+<font color=red>PAUSE: Let's do problems 9 through 12 on the J5 worksheet now (rest of class)</font>
 <br><br>
 
 ---
