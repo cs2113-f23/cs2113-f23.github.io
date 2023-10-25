@@ -141,7 +141,7 @@ margin-right: auto;"/>
 
 Your GWack Client GUI must have the following code, in addition to the GUI widgets:
 * a class named `GWackClientGUI` which extends `JFrame` and containds the necessary GUI widgets
-* `GWackClientGUI` must have an instance of an `GWackClientNetworking` object as a field (to manage the networking components)
+* `GWackClientGUI` must have an instance of a`GWackClientNetworking` class as a field (to manage the networking components)
 * `GWackClientGUI` must have the methods `newMessage(String message)`, `updateClients(String clients)`, and `sendMessage()` to implement the required functionality for those logical components
 * `GWackClientGUI` must define, as private classes, a `ConnectActionListener` and `DisconnectActionListener` to help implement the required functionality for connecting and disconnecting.
 
