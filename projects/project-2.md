@@ -137,6 +137,25 @@ style="display: block;
 margin-left: auto;
 margin-right: auto;"/>
 
+### Required methods and classes
+
+Your GWack Client GUI must have the following code, in addition to the GUI widgets:
+* a class named `GWackClientGUI` which extends `JFrame` and containds the necessary GUI widgets
+* `GWackClientGUI` must have an instance of an `GWackClientNetworking` object as a field (to manage the networking components)
+* `GWackClientGUI` must have the methods `newMessage(String message)`, `updateClients(String clients)`, and `sendMessage()` to implement the required functionality for those logical components
+* `GWackClientGUI` must define, as private classes, a `ConnectActionListener` and `DisconnectActionListener` to help implement the required functionality for connecting and disconnecting.
+
+Your `GWackClientNetworking` class must have the following code:
+* fields to store the information needed for a single connection
+* `writeMessage(String message)`, `isConnected()`, and `disconnect()` methods to implement the required functionality
+* a private class called `ReadingThread` that extends `Thread` and is used to start a new thread in the `GWackClientNetworking` constructor to serve this specific connection (so it must have a `run()` method)
+
+Your GWack channel must have the following functionality:
+* a class named `GWackChannel` that represents the server and contains the `main` method
+* a private class `GWackConnectedClient` inside of `GWackChannel` that is used to manage individual connections to the server. This class must extend the `Thread` class, and have the following methods: `sendMessage(String message)`, `isValid()`, `getClientName()`, and `run()`
+* `serve()`, `addClient(GWackConnectedClient client)`, `enqueuMessage(String message)`, `dequeueAll()`, and `getClientList()` methods to implement the required functionality
+
+
 ### Connecting and Disconnecting
 
 You should have a mechanism for clients to set a name, a host/ip address and a port to connect to. There should also be a button for connecting and disconnecting. There also needs to be visuals for when the user is connected vs. not connected.
