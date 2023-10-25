@@ -150,11 +150,6 @@ Your `GWackClientNetworking` class must have the following code:
 * `writeMessage(String message)`, `isConnected()`, and `disconnect()` methods to implement the required functionality
 * a private class called `ReadingThread` that extends `Thread` and is used to start a new thread in the `GWackClientNetworking` constructor to serve this specific connection (so it must have a `run()` method)
 
-Your GWack channel must have the following functionality:
-* a class named `GWackChannel` that represents the server and contains the `main` method
-* a private class `GWackConnectedClient` inside of `GWackChannel` that is used to manage individual connections to the server. This class must extend the `Thread` class, and have the following methods: `sendMessage(String message)`, `isValid()`, `getClientName()`, and `run()`
-* `serve()`, `addClient(GWackConnectedClient client)`, `enqueuMessage(String message)`, `dequeueAll()`, and `getClientList()` methods to implement the required functionality
-
 
 ### Connecting and Disconnecting
 
@@ -256,6 +251,13 @@ Your GWack server (`GWackChannel`) should host a single chatroom or channel at a
 * The current client list should be distributed and updated when clients leave
 * The protocol for client interaction (as described above) should be observed
 
+
+### Required methods and classes
+
+Your GWack channel must have the following functionality:
+* a class named `GWackChannel` that represents the server and contains the `main` method
+* a private class `GWackConnectedClient` inside of `GWackChannel` that is used to manage individual connections to the server. This class must extend the `Thread` class, and have the following methods: `sendMessage(String message)`, `isValid()`, `getClientName()`, and `run()`
+* `serve()`, `addClient(GWackConnectedClient client)`, `enqueuMessage(String message)`, `dequeueAll()`, and `getClientList()` methods to implement the required functionality
 
 # Grading rubric and submission
 
