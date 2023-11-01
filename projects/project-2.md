@@ -261,7 +261,7 @@ Your GWack channel must have the following functionality:
 
 # Grading rubric and submission
 
-Use git, as discussed in lab zero, to submit your work in a repo called `gitusername-lab4`. You will be graded on the following:
+Use git, as discussed in lab zero, to submit your work in a repo called `gitusername-project2`. You will be graded on the following:
 
 ## GWackClientGUI grading
 
