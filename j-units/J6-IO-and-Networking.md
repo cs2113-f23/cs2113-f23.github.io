@@ -65,7 +65,7 @@ An ip address is a 4-byte/32-bit number in Version 4 of TCP/IP protocol. We usua
 1 byte
 ```
 
-A byte is 8-bits, and thus can represent numbers between 0-255, which is why ip addresses do not have numbers greater than 255. The ip address is hierarchical where bytes to the left are more general while bytes to the right are more general. Based on a subset of the bytes, routers can determine where to send a packet next. 
+A byte is 8-bits, and thus can represent numbers between 0-255, which is why ip addresses do not have numbers greater than 255. The ip address is hierarchical where bytes to the left are more general while bytes to the right are more specific. Based on a subset of the bytes, routers can determine where to send a packet next. 
 
 ### Domain Names and Hosts
 
