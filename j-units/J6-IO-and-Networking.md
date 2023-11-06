@@ -23,6 +23,8 @@ margin-right: auto;"/>
  
 All packets have a header, which stores the address or destination of a packet, and a payload which stores the data or message of the packet. The switching part of packet switching is that at network devices, like routers and switches, the packet arrives, and based solely on the header of the packet, the device knows where to send the data next. There are no pre-defined routs for data but the protocols ensure that the next hop in the path to the destination can be determined. As you might imagine, in such a model, addressing becomes very important. 
 
+<font color="red"><b>PAUSE: Let's work on Q1 in the worksheet together now (one minute)</b></font>
+
 ### The TCP/IP Protocol Stack
 
 The Internet is modelled as a protocol stack where each protocol defines a different interaction layer. Information flows up and down the protocol stack, and at each layer, a different protocol comes to bare for forwarding the packet onward to the next hop. 
@@ -42,6 +44,8 @@ The internet and transport layer of are particular interest in this class becaus
 At a certain point, though, two processes running on different computers are actually sending and receiving data across the vastness of the Internet. The transport layer provides an abstraction for those two process to apear as if they are communicating directly with each other. Since many process can be communicating on the network at the same time, the transport layer also provides a mechanism, called ports, to differentiate communication destined for one process versus another.
 
 Finally, at the application layer, additional protocols are available depending on the task at hand. For example, SMTP is used to transmit email messages and HTTP is used to download web content and BitTorrent is used to pirate music and videos :) From a generic programmers perspective, the application layer is the domain where we get to choose what data is sent and received and how that data is interpreted; the systems programming perspective also concerns itself with system calls that enable that communication. 
+
+<font color="red"><b>PAUSE: Let's work on Q2-Q4 in the worksheet together now (five minutes)</b></font>
 
 ## Internet Addressing
 
@@ -128,6 +132,8 @@ www2old.gwu.edu has address 161.253.128.45
 
 Interesting, you can see that `www.cs.gwu.edu` is an analias for another domain `www2old.gwu.edu`, which in turn has a stable IP address `161.253.128.45`. 
 
+<font color="red"><b>PAUSE: Let's work on Q5 in the worksheet together now (two minutes)</b></font>
+
 ### Ports
 
 
@@ -135,6 +141,7 @@ The last bits of addressing relevant to this class is the port address. While th
 
 The port address is a way for the Operating System to divide up the data arriving from the network based on the destination process. Additionally, ports tend to be tightly coupled with applications. For example, to initiate a HTTP connection for web browsing, you connect using port 80; to initiate a secure shell connection with ssh, you connect using port 22; and, to initiate a connection to send email, you connect using port 25, and so on. What makes ports important is that all those services, web server, ssh, and email, can all be running on the same computer. The ports allows the operating system differentiate traffic for each application.
 
+<font color="red"><b>PAUSE: Let's work on Q6 in the worksheet together now (one minute)</b></font>
 
 ## Client/Server Model
 
@@ -269,6 +276,7 @@ The socket is two-way, so we can also "read" for input after having written to t
 
 Now when we run the program, we can type input after "HelloWorld" which get's written to our client. 
 
+<font color="red"><b>PAUSE: Let's work on Q7-Q8 in the worksheet together now (one minute)</b></font>
 
 ### The `ServerSocket` class
 
@@ -334,6 +342,8 @@ public class HelloServer{
 Note that we can easily see who is connecting to the server by retrieving the remote socket address and print that out. 
 
 Each connection comes from `127.0.0.1`, which is the IP address used when connecting within a single localhost computer. Also note that the port changes each time, that's because once the connection is established, the server is still listening on the original port `2021`, so this new connection should use a different port
+
+<font color="red"><b>PAUSE: Let's work on Q9 in the worksheet together now (one minute)</b></font>
 
 ### Threaded Echo Socket Server
 
@@ -425,4 +435,4 @@ public class EchoSocketServer{
 
 > On your own, can you write an EchoClient and connect it to the server so that they go back and forth for ever!!!
 
-
+<font color="red"><b>PAUSE: Let's work on Q10 in the worksheet together now (one minute)</b></font>
